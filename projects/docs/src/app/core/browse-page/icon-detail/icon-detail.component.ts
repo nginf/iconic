@@ -3,10 +3,12 @@ import { Component, computed, input, output } from '@angular/core';
 import { IconComponent } from '../../../core/icon/icon.component';
 import { SourceCodeComponent } from '../../../core/source-code/source-code.component';
 import { IconModel } from '../../../models/icon.model';
+import { IconButtonComponent } from '../../icon-button/icon-button.component';
+import { CloseComponent } from "../../icons/close.component";
 
 @Component({
   selector: 'app-icon-detail',
-  imports: [SourceCodeComponent, IconComponent],
+  imports: [SourceCodeComponent, IconComponent, IconButtonComponent, CloseComponent],
   templateUrl: './icon-detail.component.html',
   styleUrl: './icon-detail.component.css',
   animations: [

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonIcon } from '../../../../../common/src/public-api';
+import { CommonIcon } from "../../../../../common/src/public-api";
 
 @Component({
-  selector: 'app-check',
+  selector: 'app-close',
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -13,9 +13,10 @@ import { CommonIcon } from '../../../../../common/src/public-api';
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="lucide lucide-check"
+    class="lucide lucide-x"
   >
-    <path d="M20 6 9 17l-5-5" />
+    <path d="M18 6 6 18" />
+    <path d="m6 6 12 12" />
   </svg>`,
 })
-export class CheckComponent extends CommonIcon {}
+export class CloseComponent  extends CommonIcon {}

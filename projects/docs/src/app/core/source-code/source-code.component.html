@@ -5,10 +5,7 @@
   </code></pre>
   <div class="ml-auto">
     @if (showCopy()) {
-    <button
-      class="cursor-pointer p-2 hover:bg-slate-100 rounded-full ml-auto mr-2"
-      (click)="copy()"
-    >
+    <button appIconButton (click)="copy()" aria-label="Copy">
       @if(copied()){
       <app-check></app-check>
       } @else {
