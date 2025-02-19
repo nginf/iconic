@@ -14,7 +14,6 @@
       "lu": ["./dist/lu"],
       "md": ["./dist/md"],
       "ad": ["./dist/ad"],
-      "lu": ["./dist/lu"],
       "ng-iconic": ["./dist/ng-iconic"]
     },
     "esModuleInterop": true,
