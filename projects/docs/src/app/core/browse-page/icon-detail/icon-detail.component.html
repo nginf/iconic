@@ -4,19 +4,19 @@
 >
   <div class="container mx-auto">
     <div class="flex justify-end">
-      <button aria-label="close detail" class="hover:bg-slate-100 rounded-full p-2 cursor-pointer" (click)="closed.emit()">
-        <img src="close.svg" alt="close icon" />
+      <button appIconButton aria-label="Close" (click)="closed.emit()">
+        <app-close></app-close>
       </button>
     </div>
-    <div class="flex">
-      <div class="bg-slate-100 p-3 rounded-xl">
+    <div class="flex flex-col lg:flex-row">
+      <div class="bg-slate-100 p-3 rounded-xl flex justify-center items-center">
         <app-icon
           [content]="icon().content"
           width="180"
           height="180"
         ></app-icon>
       </div>
-      <div class="pl-10 flex flex-col gap-3">
+      <div class="lg:pl-10 flex flex-col gap-3 mt-4 lg:mt-0">
         <app-source-code language="ts" [code]="importCode()"></app-source-code>
         <app-source-code language="html" [code]="usageCode()"></app-source-code>
       </div>

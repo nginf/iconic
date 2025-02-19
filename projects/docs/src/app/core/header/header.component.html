@@ -1,9 +1,10 @@
 <header
   class="flex px-5 justify-between items-center sticky top-0 z-50 header w-full h-14 border-b border-b-gray-300 bg-white"
 >
-  <!-- <button class="lg:hidden" (click)="showSidebar()">
-    <lucide-angular [img]="Menu"></lucide-angular>
-  </button> -->
+  <button appIconButton class="lg:hidden" aria-label="toggle sidebar" (click)="showSidebar()">
+    <app-menu></app-menu>
+  </button>
+
   <a
     [routerLink]="['/']"
     class="inline-flex gap-2 ml-2 lg:ml-0 items-center text-blue-600 dark:text-violet-500"
@@ -11,11 +12,9 @@
     <img src="logo.png" alt="Logo" width="50" height="50" />
     <span class="text-amber-600 font-bold"> &#64;nginf/iconic</span>
   </a>
-  <!--
-  <app-dark-mode-toggle class="ml-auto mr-2"></app-dark-mode-toggle>
-  <a href="https://github.com/lukonik/ng-verse" target="_blank">
+  <a href="https://github.com/nginf/iconic" target="_blank">
     <button
-      appButton
+      appIconButton
       icon
       color="secondary"
       variant="outline"
@@ -23,10 +22,7 @@
       variant="link"
       aria-label="Star on Github"
     >
-      <app-icon width="20" height="20" name="github"></app-icon>
+      <app-github [size]="30"></app-github>
     </button>
   </a>
-  <div id="docsearch"></div> -->
 </header>
-
-<!-- <img src="logo.png" alt="Logo" width="50" height="50" /> -->

@@ -4,7 +4,7 @@ import {
   ElementRef,
   HostAttributeToken,
   inject,
-  input
+  input,
 } from '@angular/core';
 
 const INITIAL_SIZE = 20;
