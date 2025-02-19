@@ -2,6 +2,7 @@ import { capitalCase } from 'change-case';
 import { readFileSync } from 'fs';
 import { access, constants, mkdir, readFile } from 'fs/promises';
 import path from 'path';
+import { optimize } from 'svgo';
 import { iconsLibPath } from './constants';
 import { Registry } from './types';
 
@@ -21,21 +22,31 @@ export class IconBuilder {
       path: string;
       registry: Registry;
       fullPath: string;
-    }
+      svgo?: boolean;
+    },
+    private debugMode?: boolean
   ) {}
 
   async process() {
     this.createDirIfEmpty();
-    const svgContent = await readFile(this.icon.path, 'utf-8');
+    let svgContent = await readFile(this.icon.path, 'utf-8');
     const componentName = this.resolveComponentName();
     const selector = this.resolveSelector();
     const placeholderContent = iconPlaceholder;
+
+    svgContent = this.tryOptimize(svgContent);
 
     //Replaces template with SVG
     let iconContent = placeholderContent.replace(CONTENT_TOKEN, svgContent);
 
     iconContent = iconContent.replace(COMPONENT_NAME_KEY, componentName);
     iconContent = iconContent.replace(SELECTOR_KEY, selector);
+
+    if (this.debugMode) {
+      console.log('Selector ', selector);
+      console.log('Component Name ', componentName);
+    }
+
     const newFilePath = this.resolvenewFilePath();
     return {
       svgContent,
@@ -44,6 +55,13 @@ export class IconBuilder {
       selector,
       compName: componentName,
     };
+  }
+
+  tryOptimize(svgContent: string) {
+    if (this.icon.svgo) {
+      return optimize(svgContent).data;
+    }
+    return svgContent;
   }
 
   private getOutputPath() {
@@ -66,7 +84,8 @@ export class IconBuilder {
     const prefix = capitalCase(this.icon.registry.id);
     const merged = `${prefix}${this.icon.registry.componentName(
       this.icon.name,
-      this.icon.fullPath
+      this.icon.fullPath,
+      this.icon.name.replace('.svg', '')
     )}`;
     return merged;
   }
@@ -75,7 +94,8 @@ export class IconBuilder {
     const prefix = this.icon.registry.id.toLowerCase();
     const merged = `${prefix}-${this.icon.registry.selector(
       this.icon.name,
-      this.icon.fullPath
+      this.icon.fullPath,
+      this.icon.name.replace('.svg', '')
     )}`;
     return merged;
   }

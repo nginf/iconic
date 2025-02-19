@@ -15,6 +15,13 @@ export const routes: Routes = [
             (l) => l.LuPageComponent
           ),
       },
+      {
+        path: 'ant-design',
+        loadComponent: () =>
+          import('./pages/ad-page/ad-page.component').then(
+            (l) => l.AdPageComponent
+          ),
+      },
     ],
   },
   {

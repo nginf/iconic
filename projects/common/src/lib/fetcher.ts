@@ -50,6 +50,11 @@ export class Fetcher {
       // Checkout the specified branch
       await repoGit.checkout(branch);
 
+      // Delete the .git folder
+      const gitFolderPath = path.join(repoPath, '.git');
+      await rm(gitFolderPath, { recursive: true, force: true });
+      console.log(`.git folder deleted successfully for ${repoName}`);
+
       console.log(`Process finished for ${this.registry.id}.`);
     } catch (err) {
       console.error(`Error during sparse checkout for ${repoName}:`, err);

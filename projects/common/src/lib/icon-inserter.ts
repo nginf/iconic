@@ -7,7 +7,7 @@ export class IconInserter {
   private _indexContent = '';
   private iconTree: Array<{ name: string; content: string; compName: string }> =
     [];
-  constructor(private registry: Registry) {}
+  constructor(private registry: Registry, public debugMode?: boolean) {}
 
   private registryDir() {
     return `${iconsLibPath()}`;
@@ -41,13 +41,21 @@ export class IconInserter {
   async commit() {
     //Index Update
     const indexPath = `${publicApiPath()}`;
-    await writeFile(indexPath, this._indexContent, 'utf8');
+    if (this.debugMode) {
+      return;
+    } else {
+      await writeFile(indexPath, this._indexContent, 'utf8');
+    }
 
     const tsContent = `export const ${this.registry.id.toUpperCase()}_TREE = ${JSON.stringify(
       this.iconTree,
       null,
       2
     )};`;
-    await writeFile(treePath(), tsContent, 'utf8');
+    if (this.debugMode) {
+      return;
+    } else {
+      await writeFile(treePath(), tsContent, 'utf8');
+    }
   }
 }

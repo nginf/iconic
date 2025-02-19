@@ -11,6 +11,9 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
+      "ad": [
+        "./dist/ad"
+      ],
       "lu": ["./dist/lu"],
       "ng-iconic": ["./dist/ng-iconic"]
     },

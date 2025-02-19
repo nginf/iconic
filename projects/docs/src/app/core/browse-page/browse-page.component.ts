@@ -19,7 +19,6 @@ import {
 import { FormsModule } from '@angular/forms';
 import { IconRegistry } from '../../models/icon-registry';
 import { IconModel } from '../../models/icon.model';
-import { IconButtonComponent } from '../icon-button/icon-button.component';
 import { ChevronDownComponent } from '../icons/chevron-down.component';
 import { SourceCodeComponent } from '../source-code/source-code.component';
 import { IconCardComponent } from './icon-card/icon-card.component';
@@ -84,7 +83,6 @@ export const COLLAPSE_ON_LEAVE = trigger('collapseOnLeave', [
     FormsModule,
     SourceCodeComponent,
     ChevronDownComponent,
-    IconButtonComponent,
   ],
   templateUrl: './browse-page.component.html',
   styleUrl: './browse-page.component.css',
