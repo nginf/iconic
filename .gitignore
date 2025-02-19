@@ -42,4 +42,6 @@ testem.log
 Thumbs.db
 
 
+# Icon libraries
 /projects/lu/src/lib
+/projects/ad/src/lib

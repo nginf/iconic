@@ -50,6 +50,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^19.1.0",
     "simple-git": "^3.27.0",
+    "svgo": "^3.3.2",
     "typescript": "~5.5.4",
     "vite-node": "^3.0.5"
   }
