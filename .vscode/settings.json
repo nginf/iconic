@@ -7,9 +7,12 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "node_modules": true,
-    // "dist": true,
-    // "projects/ng-iconic/src/lib/icons": true,
-    // "icons-repo": true
+    "projects/ad/repo": true,
+    "projects/ad/src/lib": true,
+    "projects/md/repo": true,
+    "projects/md/src/lib": true,
+    "projects/lu/repo": true,
+    "projects/lu/src/lib": true
   },
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"

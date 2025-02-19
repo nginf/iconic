@@ -41,12 +41,9 @@ export class IconInserter {
   async commit() {
     //Index Update
     const indexPath = `${publicApiPath()}`;
-    if (this.debugMode) {
-      return;
-    } else {
+    if (!this.debugMode) {
       await writeFile(indexPath, this._indexContent, 'utf8');
     }
-
     const tsContent = `export const ${this.registry.id.toUpperCase()}_TREE = ${JSON.stringify(
       this.iconTree,
       null,
