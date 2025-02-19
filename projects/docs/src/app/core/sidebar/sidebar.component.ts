@@ -13,5 +13,9 @@ export class SidebarComponent {
       name: 'Lucide',
       url: '/docs/lucide',
     },
+    {
+      name: 'Ant Design',
+      url: '/docs/ant-design',
+    },
   ];
 }

@@ -5,7 +5,16 @@ export interface Registry {
     branch: string;
     remoteDir: string;
   };
+  svgo?: boolean;
   resolveFiles: (icon: Registry) => Promise<string[]>;
-  componentName: (fileName: string, fullPath: string) => string; // It should return pascalCase
-  selector: (fileName: string, fullPath: string) => string; // It should return kebab-case
+  componentName: (
+    fileName: string,
+    fullPath: string,
+    pureFileName: string
+  ) => string; // It should return pascalCase
+  selector: (
+    fileName: string,
+    fullPath: string,
+    pureFileName: string
+  ) => string; // It should return kebab-case
 }
