@@ -1,0 +1,25 @@
+<div
+  @detail
+  class="rounded-t-xl bg-white p-5 border border-solid border-gray-200 shadow-2xl fixed bottom-0 left-0 right-0 mx-3"
+>
+  <div class="container mx-auto">
+    <div class="flex justify-end">
+      <button aria-label="close detail" class="hover:bg-slate-100 rounded-full p-2 cursor-pointer" (click)="closed.emit()">
+        <img src="close.svg" alt="close icon" />
+      </button>
+    </div>
+    <div class="flex">
+      <div class="bg-slate-100 p-3 rounded-xl">
+        <app-icon
+          [content]="icon().content"
+          width="180"
+          height="180"
+        ></app-icon>
+      </div>
+      <div class="pl-10 flex flex-col gap-3">
+        <app-source-code language="ts" [code]="importCode()"></app-source-code>
+        <app-source-code language="html" [code]="usageCode()"></app-source-code>
+      </div>
+    </div>
+  </div>
+</div>

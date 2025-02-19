@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+@import 'highlight.js/styles/github.css';
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #030712;
+  font-size: 16px;
+}
+
+pre code{
+  padding: 10px !important;
+}

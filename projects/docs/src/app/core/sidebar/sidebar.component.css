@@ -1,0 +1,4 @@
+.selected {
+  background: var(--color-slate-200);
+  font-weight: 400;
+}

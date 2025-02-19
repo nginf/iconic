@@ -1,0 +1,87 @@
+import { capitalCase } from 'change-case';
+import { readFileSync } from 'fs';
+import { access, constants, mkdir, readFile } from 'fs/promises';
+import path from 'path';
+import { iconsLibPath } from './constants';
+import { Registry } from './types';
+
+const PLACEHOLDER_PATH = path.join(__dirname, './icon-placeholder.ts');
+
+const iconPlaceholder = readFileSync(PLACEHOLDER_PATH, 'utf-8');
+
+const COMPONENT_NAME_KEY = 'IconComponent';
+const SELECTOR_KEY = 'app-icon';
+
+const CONTENT_TOKEN = 'CONTENT';
+
+export class IconBuilder {
+  constructor(
+    private icon: {
+      name: string;
+      path: string;
+      registry: Registry;
+      fullPath: string;
+    }
+  ) {}
+
+  async process() {
+    this.createDirIfEmpty();
+    const svgContent = await readFile(this.icon.path, 'utf-8');
+    const componentName = this.resolveComponentName();
+    const selector = this.resolveSelector();
+    const placeholderContent = iconPlaceholder;
+
+    //Replaces template with SVG
+    let iconContent = placeholderContent.replace(CONTENT_TOKEN, svgContent);
+
+    iconContent = iconContent.replace(COMPONENT_NAME_KEY, componentName);
+    iconContent = iconContent.replace(SELECTOR_KEY, selector);
+    const newFilePath = this.resolvenewFilePath();
+    return {
+      svgContent,
+      newFilePath: newFilePath,
+      content: iconContent,
+      selector,
+      compName: componentName,
+    };
+  }
+
+  private getOutputPath() {
+    return `${iconsLibPath()}/`;
+  }
+
+  private async createDirIfEmpty() {
+    try {
+      await access(this.getOutputPath(), constants.F_OK);
+    } catch {
+      try {
+        await mkdir(this.getOutputPath(), { recursive: true });
+      } catch (err) {
+        console.error('Error creating folder:', err);
+      }
+    }
+  }
+
+  private resolveComponentName() {
+    const prefix = capitalCase(this.icon.registry.id);
+    const merged = `${prefix}${this.icon.registry.componentName(
+      this.icon.name,
+      this.icon.fullPath
+    )}`;
+    return merged;
+  }
+
+  private resolveSelector() {
+    const prefix = this.icon.registry.id.toLowerCase();
+    const merged = `${prefix}-${this.icon.registry.selector(
+      this.icon.name,
+      this.icon.fullPath
+    )}`;
+    return merged;
+  }
+
+  private resolvenewFilePath() {
+    const selector = this.resolveSelector();
+    return `${selector}`;
+  }
+}

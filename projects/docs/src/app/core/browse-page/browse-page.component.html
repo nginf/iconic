@@ -1,0 +1,50 @@
+<div class="container mx-auto">
+  <div>
+    <h1 class="text-6xl">Lucide</h1>
+    <div class="flex items-center gap-2 my-3">
+      <a
+        [href]="registry().license.url"
+        target="_blank"
+        class="rounded-4xl px-2 py-1 bg-slate-300 flex items-center justify-center text-sm font-medium"
+      >
+        License: {{ registry().license.name }}
+      </a>
+      <a
+        [href]="registry().url"
+        target="_blank"
+        class="rounded-4xl px-2 py-1 bg-slate-300 flex items-center justify-center text-sm font-medium"
+      >
+        Website
+      </a>
+    </div>
+
+    <h2 class="text-3xl mb-3">Installation</h2>
+    <app-source-code language="bash" [code]="installCode()"></app-source-code>
+  </div>
+  <div
+    class="w-full bg-slate-100 rounded-md mt-10 flex gap-2 border border-solid border-transparent relative"
+  >
+    <img src="search.svg" alt="search icon" class="absolute left-3 top-[13px]" />
+    <input
+      placeholder="Browse Icons..."
+      [(ngModel)]="search"
+      class="peer h-full w-full block focus:outline-yellow-300 px-3 py-4 pl-10"
+    />
+  </div>
+  <div class="grid grid-cols-12 gap-2 mt-10">
+    @for (item of filteredItems(); track $index) {
+    <app-icon-card
+      [icon]="item"
+      [isSelected]="item === openedIcon()"
+      (selected)="openedIcon.set(item)"
+    ></app-icon-card>
+    }
+  </div>
+  @if(openedIcon();as icon){
+  <app-icon-detail
+    [registryId]="registry().id"
+    [icon]="icon"
+    (closed)="openedIcon.set(undefined)"
+  ></app-icon-detail>
+  }
+</div>

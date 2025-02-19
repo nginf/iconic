@@ -1,0 +1,20 @@
+<div class="border rounded-md border-slate-300 flex gap-2 items-center">
+  <pre
+    class="m-0 max-h-[600px] overflow-auto not-prose"
+  ><code class="rounded-md source-code" [highlight]="code()" [language]="code() ? language() : 'plaintext' ">
+  </code></pre>
+  <div class="ml-auto">
+    @if (showCopy()) {
+    <button
+      class="cursor-pointer p-2 hover:bg-slate-100 rounded-full ml-auto mr-2"
+      (click)="copy()"
+    >
+      @if(copied()){
+      <app-check></app-check>
+      } @else {
+      <app-copy></app-copy>
+      }
+    </button>
+    }
+  </div>
+</div>
