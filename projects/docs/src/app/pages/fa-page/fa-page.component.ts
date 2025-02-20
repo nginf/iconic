@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FA_TREE } from '../../../../../fa/src/tree';
-import { BrowsePageComponent } from '../../core/browse-page/browse-page.component';
+import { IconPageComponent } from '../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../models/icon-registry';
 
 @Component({
   selector: 'app-fa-page',
-  imports: [BrowsePageComponent],
+  imports: [IconPageComponent],
   templateUrl: './fa-page.component.html',
   styleUrl: './fa-page.component.css',
 })

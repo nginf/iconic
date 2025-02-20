@@ -76,7 +76,7 @@ export const COLLAPSE_ON_LEAVE = trigger('collapseOnLeave', [
 ]);
 
 @Component({
-  selector: 'app-browse-page',
+  selector: 'app-icon-page',
   imports: [
     IconCardComponent,
     IconDetailComponent,
@@ -84,11 +84,11 @@ export const COLLAPSE_ON_LEAVE = trigger('collapseOnLeave', [
     SourceCodeComponent,
     ChevronDownComponent,
   ],
-  templateUrl: './browse-page.component.html',
-  styleUrl: './browse-page.component.css',
+  templateUrl: './icon-page.component.html',
+  styleUrl: './icon-page.component.css',
   animations: [EXPAND_ON_ENTER_ANIMATION, COLLAPSE_ON_LEAVE],
 })
-export class BrowsePageComponent {
+export class IconPageComponent {
   registry = input.required<IconRegistry>();
 
   openedIcon = signal<IconModel | undefined>(undefined);

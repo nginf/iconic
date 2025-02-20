@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrowsePageComponent } from './browse-page.component';
+import { IconPageComponent } from './icon-page.component';
 
 describe('BrowsePageComponent', () => {
-  let component: BrowsePageComponent;
-  let fixture: ComponentFixture<BrowsePageComponent>;
+  let component: IconPageComponent;
+  let fixture: ComponentFixture<IconPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrowsePageComponent]
+      imports: [IconPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BrowsePageComponent);
+    fixture = TestBed.createComponent(IconPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

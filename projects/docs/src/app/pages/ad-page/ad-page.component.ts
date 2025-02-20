@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { AD_TREE } from '../../../../../ad/src/tree';
-import { BrowsePageComponent } from '../../core/browse-page/browse-page.component';
+import { IconPageComponent } from '../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../models/icon-registry';
 
 @Component({
   selector: 'app-ad-page',
-  imports: [BrowsePageComponent],
+  imports: [IconPageComponent],
   templateUrl: './ad-page.component.html',
   styleUrl: './ad-page.component.css',
 })
