@@ -8,8 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:docs": "node dist/docs/server/server.mjs",
-    "publish:ad": "cd projects && cd ad && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=ad",
-    "publish:lu": "cd projects && cd lu && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=lu"
+    "publish:ad": "cd projects && cd ad && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=ad && cd dist && cd lu && npm publish",
+    "publish:lu": "cd projects && cd lu && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=lu && cd dist && cd lu && npm publish",
+    "publish:md": "cd projects && cd md && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=md && cd dist && cd md && npm publish",
+    "publish:fa": "cd projects && cd fa && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=fa && cd dist && cd fa && npm publish"
   },
   "private": true,
   "dependencies": {
