@@ -1,4 +1,8 @@
 <button
+  [appTooltip]="icon().name"
+  tooltipDelay="150"
+  tooltipPosition="bottom"
+  [title]="icon().name"
   (click)="selected.emit()"
   class="bg-slate-100 rounded-md p-3 w-16 h-16 flex items-center justify-center hover:bg-slate-200 border-transparent cursor-pointer border border-solid"
   [class.!border-amber-400]="isSelected()"
