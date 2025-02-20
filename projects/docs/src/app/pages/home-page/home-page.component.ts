@@ -23,5 +23,15 @@ export class HomePageComponent {
       logo: 'material-logo.svg',
       path: '/docs/material',
     },
+    {
+      name: 'Font Awesome',
+      logo: 'font-awesome-logo.svg',
+      path: '/docs/font-awesome',
+    },
+    {
+      name: 'Ant Design',
+      logo: 'ant-design-logo.svg',
+      path: '/docs/ant-design',
+    },
   ];
 }

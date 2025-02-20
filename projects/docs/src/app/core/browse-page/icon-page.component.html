@@ -1,6 +1,6 @@
 <div class="container mx-auto">
   <div>
-    <h1 class="text-6xl pt-3 capitalize">{{ registry().name }}</h1>
+    <h1 class="text-6xl pt-8 capitalize">{{ registry().name }}</h1>
     <div class="flex items-center gap-2 my-3 mb-6">
       <a
         [href]="registry().license.url"
@@ -14,7 +14,7 @@
         target="_blank"
         class="rounded-4xl px-2 py-1 bg-slate-300 flex items-center justify-center text-sm font-medium hover:bg-slate-400"
       >
-        Reference API
+        Webpage
       </a>
     </div>
 
@@ -67,7 +67,7 @@
     <input
       placeholder="Browse Icons..."
       [(ngModel)]="search"
-      class="peer h-full w-full block focus:outline-yellow-300 px-3 py-4 pl-10"
+      class="peer h-full w-full block focus:outline-amber-600 px-3 py-4 pl-10"
     />
   </div>
   <div class="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-12 gap-2 mt-10">

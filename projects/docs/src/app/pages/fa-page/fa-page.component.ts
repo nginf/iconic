@@ -16,7 +16,7 @@ export class FaPageComponent {
     name: 'Font Awesome',
     url: 'https://fontawesome.com/',
     license: {
-      name: 'CC BY 4.0 License',
+      name: 'CC BY 4.0',
       url: 'https://creativecommons.org/licenses/by/4.0/',
     },
   };

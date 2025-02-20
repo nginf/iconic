@@ -1,6 +1,50 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+interface Group {
+  name: string;
+  children: SidebarLink[];
+}
+
+export interface SidebarLink {
+  name: string;
+  url: string;
+  done?: boolean;
+}
+
+export const SIDEBAR_ROUTES = [
+  {
+    name: 'Getting Started',
+    children: [
+      {
+        name: 'Introduction',
+        url: '/docs/introduction',
+      },
+    ],
+  },
+  {
+    name: 'Icons',
+    children: [
+      {
+        name: 'Lucide',
+        url: '/docs/lucide',
+      },
+      {
+        name: 'Material Design',
+        url: '/docs/material-design',
+      },
+      {
+        name: 'Font Awesome',
+        url: '/docs/font-awesome',
+      },
+      {
+        name: 'Ant Design',
+        url: '/docs/ant-design',
+      },
+    ],
+  },
+] as Group[];
+
 @Component({
   selector: 'app-sidebar',
   imports: [RouterLink, RouterLinkActive],
@@ -8,18 +52,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  routes = [
-    {
-      name: 'Lucide',
-      url: '/docs/lucide',
-    },
-    {
-      name: 'Ant Design',
-      url: '/docs/ant-design',
-    },
-    {
-      name: 'Font Awesome',
-      url: '/docs/fa',
-    },
-  ];
+  routes: Group[] = SIDEBAR_ROUTES;
 }

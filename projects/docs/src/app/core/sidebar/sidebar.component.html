@@ -1,18 +1,21 @@
 <div
-  class="sidebar w-[250px] lg:w-[300px] pt-4 overflow-auto h-screen pb-16 bg-white border-r border-slate-300 lg:sticky lg:top-[56px] lg:h-[calc(100vh - 56px)]"
+  class="sidebar w-[250px] lg:w-[300px] pt-4 overflow-auto px-5 border-r border-r-slate-300 h-screen pb-16 sticky top-[56px] bg-white"
 >
   <nav>
+    @for (route of routes; track $index) {
     <ul class="list-none pl-0">
-      @for (link of routes; track $index) {
+      <li class="mb-3 font-medium">{{ route.name }}</li>
+      @for (link of route.children; track $index) {
       <li>
         <a
           [routerLinkActive]="'selected'"
-          class="ml-0 my-3 h-8 cursor-pointer flex pl-4 pr-2 text-xl justify-between items-center hover:bg-slate-200 hover:font-medium"
+          class="ml-0 my-3 hover:bg-slate-100 h-8 cursor-pointer flex pl-4 pr-2 rounded-md justify-between items-center sidebar-link"
           [routerLink]="link.url"
           >{{ link.name }}
         </a>
       </li>
       }
     </ul>
+    }
   </nav>
 </div>
