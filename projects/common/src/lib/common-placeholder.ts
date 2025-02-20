@@ -1,5 +1,6 @@
 import {
-  Directive,
+  ChangeDetectionStrategy,
+  Component,
   effect,
   ElementRef,
   HostAttributeToken,
@@ -17,8 +18,18 @@ function coerceCssPixelValue(value: any): string {
   return typeof value === 'string' ? value : `${value}px`;
 }
 
-@Directive()
-class CommonIcon {
+@Component({
+  selector: 'app-icon',
+  template: `CONTENT`,
+  standalone: true,
+  styles: `
+    :host {
+      display: inline-flex;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class IconComponent {
   stretch = input(false);
   size = input<number | string>(INITIAL_SIZE);
 
@@ -51,6 +62,7 @@ class CommonIcon {
       if (!icon) {
         return;
       }
+      icon.setAttribute('fill', 'currentColor');
       if (this.stretch()) {
         icon.setAttribute('width', '100%');
         icon.setAttribute('height', '100%');
@@ -60,18 +72,6 @@ class CommonIcon {
         icon.setAttribute('width', coerceWdth);
         icon.setAttribute('height', coerceHeight);
       }
-    });
-  }
-}
-
-@Directive()
-export class BaseIcon extends CommonIcon {
-  constructor() {
-    super();
-
-    effect(() => {
-      const icon = this.icon;
-      icon.setAttribute('fill', 'currentColor');
     });
   }
 }

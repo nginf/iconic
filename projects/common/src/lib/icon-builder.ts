@@ -6,10 +6,6 @@ import { optimize } from 'svgo';
 import { iconsLibPath } from './constants';
 import { Registry } from './types';
 
-const PLACEHOLDER_PATH = path.join(__dirname, './icon-placeholder.ts');
-
-const iconPlaceholder = readFileSync(PLACEHOLDER_PATH, 'utf-8');
-
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
 
@@ -23,6 +19,7 @@ export class IconBuilder {
       registry: Registry;
       fullPath: string;
       svgo?: boolean;
+      iconPlaceholder: string;
     },
     private debugMode?: boolean
   ) {}
@@ -32,7 +29,7 @@ export class IconBuilder {
     let svgContent = await readFile(this.icon.path, 'utf-8');
     const componentName = this.resolveComponentName();
     const selector = this.resolveSelector();
-    const placeholderContent = iconPlaceholder;
+    const placeholderContent = this.icon.iconPlaceholder;
 
     svgContent = this.tryOptimize(svgContent);
 
