@@ -29,6 +29,13 @@ export const routes: Routes = [
             (l) => l.FaPageComponent
           ),
       },
+      {
+        path: 'material',
+        loadComponent: () =>
+          import('./pages/md-page/md-page.component').then(
+            (l) => l.MdPageComponent
+          ),
+      },
     ],
   },
   {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LucideBrowseComponent } from './lucide-browse.component';
+import { MdPageComponent } from './md-page.component';
 
-describe('LucideBrowseComponent', () => {
-  let component: LucideBrowseComponent;
-  let fixture: ComponentFixture<LucideBrowseComponent>;
+describe('MdPageComponent', () => {
+  let component: MdPageComponent;
+  let fixture: ComponentFixture<MdPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LucideBrowseComponent]
+      imports: [MdPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LucideBrowseComponent);
+    fixture = TestBed.createComponent(MdPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
