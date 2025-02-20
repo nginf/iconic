@@ -1,4 +1,4 @@
-import { mkdir, rm } from 'fs/promises';
+import { rm, mkdir } from 'fs/promises';
 import path from 'path';
 import simpleGit from 'simple-git';
 import { iconsRepoPath } from './constants';
@@ -26,7 +26,6 @@ export class Fetcher {
 
     const repoName = path.basename(repoUrl, '.git');
     const repoPath = path.join(iconsRepoPath());
-    console.log(repoPath);
     const git = simpleGit();
     console.log('Start fetching ', this.registry.id);
     try {

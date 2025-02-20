@@ -5,11 +5,11 @@ export const iconsRepoPath = function () {
 };
 
 export const iconsLibPath = function () {
-  return path.join(process.cwd(), './src/lib');
+  return path.join(process.cwd(), './');
 };
 
 export const publicApiPath = function () {
-  return path.join(process.cwd(), './public-api.ts');
+  return path.join(process.cwd(), './src', './public-api.ts');
 };
 
 export const treePath = function () {

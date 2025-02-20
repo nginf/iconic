@@ -4,7 +4,7 @@ import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
 import { Registry } from '../../common/src/lib/types';
 
-export const LU_REGISTRY: Registry = {
+export const AD_REGISTRY: Registry = {
   id: 'ad',
   source: {
     url: 'https://github.com/ant-design/ant-design-icons.git',

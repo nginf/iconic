@@ -7,7 +7,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:docs": "node dist/docs/server/server.mjs"
+    "serve:ssr:docs": "node dist/docs/server/server.mjs",
+    "publish:ad": "cd projects/ad && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=ad && cd dist/ad && npm publish --access public && cd ../../ && npm run clean:ad",
+    "publish:lu": "cd projects/lu && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=lu && cd dist/lu && npm publish --access public && cd ../../ && npm run clean:lu",
+    "publish:md": "cd projects/md && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=md && cd dist/md && npm publish --access public && cd ../../ && npm run clean:md",
+    "publish:fa": "cd projects/fa && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=fa && cd dist/fa && npm publish --access public && cd ../../ && npm run clean:fa",
+    "clean:lu": "cd projects/lu && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
+    "clean:md": "cd projects/md && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
+    "clean:ad": "cd projects/ad && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
+    "clean:fa": "cd projects/fa && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +"
   },
   "private": true,
   "dependencies": {
