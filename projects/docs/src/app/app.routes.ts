@@ -22,6 +22,13 @@ export const routes: Routes = [
             (l) => l.AdPageComponent
           ),
       },
+      {
+        path: 'fa',
+        loadComponent: () =>
+          import('./pages/fa-page/fa-page.component').then(
+            (l) => l.FaPageComponent
+          ),
+      },
     ],
   },
   {

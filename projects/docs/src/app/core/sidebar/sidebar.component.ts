@@ -17,5 +17,9 @@ export class SidebarComponent {
       name: 'Ant Design',
       url: '/docs/ant-design',
     },
+    {
+      name: 'Font Awesome',
+      url: '/docs/fa',
+    },
   ];
 }

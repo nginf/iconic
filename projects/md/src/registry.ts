@@ -1,8 +1,8 @@
 import { kebabCase, pascalCase } from 'change-case';
 import { glob } from 'glob';
+import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
 import { Registry } from '../../common/src/lib/types';
-import path from 'path';
 
 const TYPE_SUFFIX = {
   materialicons: '',
@@ -16,7 +16,6 @@ function resolveIconName(_: string, fullPath: string) {
   const parts = fullPath.split(path.sep);
   const type = parts[parts.length - 2] as keyof typeof TYPE_SUFFIX;
   const iconName = parts[parts.length - 3];
-  const iconGroup = parts[parts.length - 4];
 
   return iconName + TYPE_SUFFIX[type];
 }
