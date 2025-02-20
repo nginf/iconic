@@ -1,4 +1,18 @@
-.selected {
-  background: var(--color-slate-200);
-  font-weight: 400;
+a {
+  text-decoration: none;
+}
+
+.selected,
+.sidebar-link:hover {
+  font-weight: 500;
+  background: var(--color-slate-100);
+}
+
+.sidebar {
+  height: 100vh;
+  padding-bottom: 60px;
+  /* @screen lg {
+    height: calc(100vh - 56px);
+    @apply sticky top-[56px];
+  } */
 }

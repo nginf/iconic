@@ -23,11 +23,30 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'fa',
+        path: 'font-awesome',
         loadComponent: () =>
           import('./pages/fa-page/fa-page.component').then(
             (l) => l.FaPageComponent
           ),
+      },
+      {
+        path: 'material-design',
+        loadComponent: () =>
+          import('./pages/md-page/md-page.component').then(
+            (l) => l.MdPageComponent
+          ),
+      },
+      {
+        path: 'introduction',
+        loadComponent: () =>
+          import('./pages/introduction-page/introduction-page.component').then(
+            (p) => p.IntroductionPageComponent
+          ),
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'introduction',
       },
     ],
   },

@@ -1,0 +1,103 @@
+<article class="prose prose-lg">
+  <h1>Introduction</h1>
+
+  <p>
+    <code>&#64;nginf/iconic</code> (Iconic for short) is an Angular library that
+    allows you to use open-source icons in your project. It has one major
+    advantage over other Angular icon libraries—you can use icons as regular
+    components.
+  </p>
+
+  <h1>Overview</h1>
+
+  <p>Most icon libraries follow one of these approaches:</p>
+
+  <ul>
+    <li>
+      A generic icon component is provided, and you pass the icon name as a
+      string.
+    </li>
+    <li>
+      SVG files are placed in the public folder and registered by name using a
+      registration service.
+    </li>
+    <li>
+      A generic icon component is used, but instead of passing the name, you
+      provide an SVG reference.
+    </li>
+  </ul>
+
+  <p>
+    In our opinion, the best way to use icons in your project is to treat them
+    as regular components, just like any other component. This approach has
+    several advantages:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Ease of use</strong> – Icons are used like standard Angular
+      components.
+    </li>
+    <li>
+      <strong>Full IntelliSense support</strong> – You get auto-completion and
+      type safety in your IDE.
+    </li>
+    <li>
+      <strong>No additional AJAX requests</strong> – Icons are loaded
+      immediately, improving performance.
+    </li>
+    <li>
+      <strong>Everything in one place</strong> – The SVG and component logic are
+      not separated, keeping the project structured.
+    </li>
+    <li>
+      <strong>Effective tree-shaking</strong> – Unused icons are removed during
+      the build process, reducing bundle size.
+    </li>
+  </ul>
+
+  <p>
+    Iconic provides this functionality by compiling popular open-source icon
+    libraries into small, optimized, and fully functional Angular components.
+    This means you only import the icons you need. Keep in mind that Iconic does
+    not include icons itself; instead, it utilizes open-source free icons.
+  </p>
+
+  <h1>Installation</h1>
+
+  <p>
+    There is no single global installation command like
+    <code>npm install iconic</code>. Instead, each icon library has its own
+    installation package, allowing you to install only the libraries you need.
+  </p>
+
+  <p>For example, to install the Lucide icon library, run:</p>
+
+  <pre><code>npm install &#64;nginf/iconic-lu</code></pre>
+
+  <p>For Material Design icons, run:</p>
+
+  <pre><code>npm install &#64;nginf/iconic-md</code></pre>
+
+  <p>(See the documentation for each icon library for more details.)</p>
+
+  <h1>Usage</h1>
+
+  <p>
+    The usage pattern is the same across all icon libraries. First, you need to
+    import the appropriate icon and then use it inside your template.
+  </p>
+
+  <p>
+    For example, to use the <code>ChevronDown</code> icon from Lucide, your code
+    would look like this:
+  </p>
+
+  <pre><code>&lt;LuChevronDown&gt;&lt;/LuChevronDown&gt;</code></pre>
+
+  <p>
+    Each icon library has its own unique prefix for components. Some libraries
+    may also provide additional input properties, which are documented in their
+    respective API sections.
+  </p>
+</article>
