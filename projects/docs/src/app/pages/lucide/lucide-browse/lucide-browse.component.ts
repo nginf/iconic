@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { LU_TREE } from '../../../../../../lu/src/tree';
-import { BrowsePageComponent } from '../../../core/browse-page/browse-page.component';
+import { IconPageComponent } from '../../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../../models/icon-registry';
 
 @Component({
   selector: 'app-lucide-browse',
-  imports: [BrowsePageComponent],
+  imports: [IconPageComponent],
   templateUrl: './lucide-browse.component.html',
   styleUrl: './lucide-browse.component.css',
 })

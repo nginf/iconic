@@ -12,7 +12,9 @@
     "projects/md/repo": true,
     "projects/md/src/lib": true,
     "projects/lu/repo": true,
-    "projects/lu/src/lib": true
+    "projects/lu/src/lib": true,
+    "projects/fa/repo": true,
+    "projects/fa/src/lib": true
   },
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"

@@ -5,15 +5,16 @@ import {
   ElementRef,
   inject,
   input,
-  output
+  output,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IconComponent } from "../../../core/icon/icon.component";
+import { IconComponent } from '../../../core/icon/icon.component';
 import { IconModel } from '../../../models/icon.model';
+import { TooltipDirective } from '../../tooltip/tooltip.directive';
 
 @Component({
   selector: 'app-icon-card',
-  imports: [IconComponent],
+  imports: [IconComponent, TooltipDirective],
   templateUrl: './icon-card.component.html',
   styleUrl: './icon-card.component.css',
 })
