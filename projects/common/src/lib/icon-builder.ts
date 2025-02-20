@@ -81,22 +81,20 @@ export class IconBuilder {
   }
 
   private resolveComponentName() {
-    const prefix = capitalCase(this.icon.registry.id);
-    const merged = `${prefix}${this.icon.registry.componentName(
+    const merged = `${this.icon.registry.componentName(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
-    )}`;
+    )}Icon`;
     return merged;
   }
 
   private resolveSelector() {
-    const prefix = this.icon.registry.id.toLowerCase();
-    const merged = `${prefix}-${this.icon.registry.selector(
+    const merged = `${this.icon.registry.selector(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
-    )}`;
+    )}-icon`;
     return merged;
   }
 

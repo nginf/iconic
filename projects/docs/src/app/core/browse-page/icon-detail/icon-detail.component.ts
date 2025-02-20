@@ -4,11 +4,16 @@ import { IconComponent } from '../../../core/icon/icon.component';
 import { SourceCodeComponent } from '../../../core/source-code/source-code.component';
 import { IconModel } from '../../../models/icon.model';
 import { IconButtonComponent } from '../../icon-button/icon-button.component';
-import { CloseComponent } from "../../icons/close.component";
+import { CloseComponent } from '../../icons/close.component';
 
 @Component({
   selector: 'app-icon-detail',
-  imports: [SourceCodeComponent, IconComponent, IconButtonComponent, CloseComponent],
+  imports: [
+    SourceCodeComponent,
+    IconComponent,
+    IconButtonComponent,
+    CloseComponent,
+  ],
   templateUrl: './icon-detail.component.html',
   styleUrl: './icon-detail.component.css',
   animations: [
@@ -37,7 +42,7 @@ export class IconDetailComponent {
     () =>
       `import { ${
         this.icon().compName
-      } } from '@nginf/iconic-${this.registryId()}';`
+      } } from '@nginf/iconic-${this.registryId()}/${this.icon().name}';`
   );
 
   usageCode = computed(() => `<${this.icon().name}></${this.icon().name}>`);

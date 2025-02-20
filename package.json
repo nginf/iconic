@@ -14,7 +14,7 @@
     "publish:fa": "cd projects/fa && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=fa && cd dist/fa && npm publish --access public && cd ../../ && npm run clean:fa",
     "clean:lu": "cd projects/lu && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
     "clean:md": "cd projects/md && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
-    "clean:af": "cd projects/af && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
+    "clean:ad": "cd projects/ad && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +",
     "clean:fa": "cd projects/fa && find . -maxdepth 1 -type d ! -name \"src\" ! -name \".\" -exec rm -rf {} +"
   },
   "private": true,

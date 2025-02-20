@@ -1,1 +1,1 @@
-export * from "./base-icon";
+export default void 0;
