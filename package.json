@@ -8,10 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:docs": "node dist/docs/server/server.mjs",
-    "publish:ad": "cd projects && cd ad && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=ad && cd dist && cd ad && npm publish --access public",
-    "publish:lu": "cd projects && cd lu && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=lu && cd dist && cd lu && npm publish --access public",
-    "publish:md": "cd projects && cd md && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=md && cd dist && cd md && npm publish --access public",
-    "publish:fa": "cd projects && cd fa && npm run fetch && npm run generate && npm version patch && cd ../ && cd ../ && ng build --project=fa && cd dist && cd fa && npm publish --access public"
+    "publish:ad": "cd projects/ad && npm run fetch && npm run generate && npm version patch && cd ../../ && ng build --project=ad && cd dist/ad && npm publish --access public",
+    "publish:lu": "cd projects/lu && npm run fetch && npm run generate && npm version patch && cd ../../ && ng build --project=lu && cd dist/lu && npm publish --access public",
+    "publish:md": "cd projects/md && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=md && cd dist/md && npm publish --access public",
+    "publish:fa": "cd projects/fa && npm run fetch && npm run generate && npm version patch && cd ../../ && ng build --project=fa && cd dist/fa && npm publish --access public"
   },
   "private": true,
   "dependencies": {
