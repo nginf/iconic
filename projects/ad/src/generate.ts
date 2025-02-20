@@ -1,7 +1,7 @@
 import { Generator } from '../../common/src/public-api';
-import { LU_REGISTRY } from './registry';
+import { AD_REGISTRY } from './registry';
 
-const generator = new Generator(LU_REGISTRY);
+const generator = new Generator(AD_REGISTRY);
 
 await generator.init();
 

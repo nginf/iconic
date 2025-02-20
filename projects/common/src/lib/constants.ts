@@ -9,7 +9,7 @@ export const iconsLibPath = function () {
 };
 
 export const publicApiPath = function () {
-  return path.join(process.cwd(), './public-api.ts');
+  return path.join(process.cwd(), './src', './public-api.ts');
 };
 
 export const treePath = function () {

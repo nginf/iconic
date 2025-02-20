@@ -1,7 +1,7 @@
 import { Fetcher } from '../../common/src/public-api';
-import { LU_REGISTRY } from './registry';
+import { AD_REGISTRY } from './registry';
 
-const fetcher = new Fetcher(LU_REGISTRY);
+const fetcher = new Fetcher(AD_REGISTRY);
 
 await fetcher.init();
 
