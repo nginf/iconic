@@ -1,4 +1,4 @@
-import { writeFile } from 'fs/promises';
+import { mkdir, writeFile, rm } from 'fs/promises';
 import path from 'path';
 import { iconsLibPath, publicApiPath, treePath } from './constants';
 import { Registry } from './types';
@@ -27,10 +27,28 @@ export class IconInserter {
     selector: string;
     compName: string;
   }) {
-    const fileDist = `${path.join(this.registryDir(), newFilePath)}.ts`;
-    await writeFile(fileDist, content, 'utf8');
+    const iconDir = path.join(this.registryDir(), newFilePath);
 
-    this._indexContent += `export * from './lib/${newFilePath}';\n`;
+    await rm(iconDir, { recursive: true, force: true });
+
+    await mkdir(iconDir, { recursive: true });
+
+    const srcDir = path.join(iconDir, './src');
+
+    await mkdir(srcDir, { recursive: true });
+
+    const ngPackagePath = path.join(iconDir, './ng-package.json');
+
+    await writeFile(ngPackagePath, '{}', 'utf-8');
+
+    const filePath = path.join(srcDir, `${newFilePath}.ts`);
+
+    await writeFile(filePath, content, 'utf8');
+
+    const publicApiPath = path.join(srcDir, './public_api.ts');
+
+    await writeFile(publicApiPath, `export * from './${newFilePath}';`, 'utf8');
+
     this.iconTree.push({
       name: selector,
       content: svgContent,
@@ -39,11 +57,6 @@ export class IconInserter {
   }
 
   async commit() {
-    //Index Update
-    const indexPath = `${publicApiPath()}`;
-    if (!this.debugMode) {
-      await writeFile(indexPath, this._indexContent, 'utf8');
-    }
     const tsContent = `export const ${this.registry.id.toUpperCase()}_TREE = ${JSON.stringify(
       this.iconTree,
       null,

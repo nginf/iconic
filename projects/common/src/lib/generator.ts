@@ -1,9 +1,10 @@
-import { mkdir, rm } from 'fs/promises';
 import path from 'path';
-import { iconsLibPath } from './constants';
 import { IconBuilder } from './icon-builder';
 import { IconInserter } from './icon-inserter';
 import { Registry } from './types';
+import { readdir, rm } from 'fs/promises';
+
+const EXCLUDED_FOLDERS = new Set(['src', 'repo']); // Folders to keep
 
 export class Generator {
   constructor(private registry: Registry, private debugMode?: boolean) {}
@@ -11,13 +12,27 @@ export class Generator {
     if (this.debugMode) {
       return;
     }
-    await rm(iconsLibPath(), {
-      recursive: true,
-      force: true,
-    });
-    await mkdir(iconsLibPath(), {
-      recursive: true,
-    });
+    try {
+      const entries = await readdir(__dirname, { withFileTypes: true });
+
+      // Filter only directories except the excluded folders
+      const foldersToDelete = entries
+        .filter(
+          (dirent) => dirent.isDirectory() && !EXCLUDED_FOLDERS.has(dirent.name)
+        )
+        .map((dirent) => path.join(__dirname, dirent.name));
+
+      // Delete all selected folders
+      await Promise.all(
+        foldersToDelete.map((folder) =>
+          rm(folder, { recursive: true, force: true })
+        )
+      );
+
+      console.log('Cleanup complete!');
+    } catch (error) {
+      console.error('Error while deleting folders:', error);
+    }
   }
 
   async process() {

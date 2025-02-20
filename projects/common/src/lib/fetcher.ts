@@ -1,4 +1,4 @@
-import { mkdir, rm } from 'fs/promises';
+import { rm, mkdir } from 'fs/promises';
 import path from 'path';
 import simpleGit from 'simple-git';
 import { iconsRepoPath } from './constants';

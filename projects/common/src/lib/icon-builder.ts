@@ -101,7 +101,6 @@ export class IconBuilder {
   }
 
   private resolvenewFilePath() {
-    const selector = this.resolveSelector();
-    return `${selector}`;
+    return `${this.icon.name.replace('.svg', '')}`;
   }
 }
