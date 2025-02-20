@@ -1,6 +1,7 @@
 {
-  "name": "fa",
-  "version": "0.0.1",
+  "name": "@nginf/iconic-fa",
+  "private": false,
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": ">=17.0.0",
     "@angular/core": ">=17.0.0"

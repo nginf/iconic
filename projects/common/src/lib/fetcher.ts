@@ -26,7 +26,6 @@ export class Fetcher {
 
     const repoName = path.basename(repoUrl, '.git');
     const repoPath = path.join(iconsRepoPath());
-    console.log(repoPath);
     const git = simpleGit();
     console.log('Start fetching ', this.registry.id);
     try {
