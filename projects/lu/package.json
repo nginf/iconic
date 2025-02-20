@@ -3,8 +3,8 @@
   "private": false,
   "version": "0.0.3",
   "peerDependencies": {
-    "@angular/common": ">=19.1.0",
-    "@angular/core": ">=19.1.0"
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
