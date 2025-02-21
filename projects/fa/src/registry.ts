@@ -24,12 +24,16 @@ export const FA_REGISTRY: Registry = {
     branch: '6.x',
     remoteDir: 'svgs/',
   },
-  resolveFiles: async (icon) =>
-    await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
-  componentName: (fileName, fullPath, pureFileName) => {
-    return pascalCase(resolveIconName(fileName, fullPath, pureFileName));
-  },
-  selector: (fileName, fullPath, pureFileName) => {
-    return kebabCase(resolveIconName(fileName, fullPath, pureFileName));
-  },
+  contents: [
+    {
+      resolveFiles: async (icon) =>
+        await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
+      componentName: (fileName, fullPath, pureFileName) => {
+        return pascalCase(resolveIconName(fileName, fullPath, pureFileName));
+      },
+      selector: (fileName, fullPath, pureFileName) => {
+        return kebabCase(resolveIconName(fileName, fullPath, pureFileName));
+      },
+    },
+  ],
 };

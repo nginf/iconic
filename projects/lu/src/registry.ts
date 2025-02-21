@@ -10,9 +10,13 @@ export const LU_REGISTRY: Registry = {
     branch: 'main',
     remoteDir: 'icons',
   },
-  placeholder:"lu-placeholder",
-  resolveFiles: async (icon) =>
-    await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/*.svg`),
-  componentName: (fileName) => pascalCase(fileName.replace('.svg', '')),
-  selector: (fileName) => fileName.replace('.svg', ''),
+  placeholder: 'lu-placeholder',
+  contents: [
+    {
+      resolveFiles: async (icon) =>
+        await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/*.svg`),
+      componentName: (fileName) => pascalCase(fileName.replace('.svg', '')),
+      selector: (fileName) => fileName.replace('.svg', ''),
+    },
+  ],
 };

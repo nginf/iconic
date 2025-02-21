@@ -2,7 +2,7 @@ import { capitalCase } from 'change-case';
 import { access, constants, mkdir, readFile } from 'fs/promises';
 import { optimize } from 'svgo';
 import { iconsLibPath } from './constants';
-import { Registry } from './types';
+import { Registry, RegistryContent } from './types';
 
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
@@ -16,8 +16,8 @@ export class IconBuilder {
       path: string;
       registry: Registry;
       fullPath: string;
-      svgo?: boolean;
       iconPlaceholder: string;
+      registryContent: RegistryContent;
     },
     private debugMode?: boolean
   ) {}
@@ -53,7 +53,7 @@ export class IconBuilder {
   }
 
   tryOptimize(svgContent: string) {
-    if (this.icon.svgo) {
+    if (this.icon.registryContent.svgo) {
       return optimize(svgContent).data;
     }
     return svgContent;
@@ -80,7 +80,7 @@ export class IconBuilder {
   }
 
   private resolveComponentName() {
-    let merged = `${this.icon.registry.componentName(
+    let merged = `${this.icon.registryContent.componentName(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
@@ -95,7 +95,7 @@ export class IconBuilder {
   }
 
   private resolveSelector() {
-    let merged = `${this.icon.registry.selector(
+    let merged = `${this.icon.registryContent.selector(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
@@ -108,7 +108,7 @@ export class IconBuilder {
   }
 
   private resolvenewFilePath() {
-    const merged = `${this.icon.registry.selector(
+    const merged = `${this.icon.registryContent.selector(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')

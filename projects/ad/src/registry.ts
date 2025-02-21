@@ -11,32 +11,36 @@ export const AD_REGISTRY: Registry = {
     branch: 'master',
     remoteDir: 'packages/icons-svg/svg/',
   },
-  svgo: true,
-  resolveFiles: async (icon) =>
-    await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
-  componentName: (_, fullPath, pureFileName) => {
-    const parentDir = path.dirname(fullPath);
-    const parentBase = path.basename(parentDir);
+  contents: [
+    {
+      svgo: true,
+      resolveFiles: async (icon) =>
+        await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
+      componentName: (_, fullPath, pureFileName) => {
+        const parentDir = path.dirname(fullPath);
+        const parentBase = path.basename(parentDir);
 
-    function getType() {
-      return parentBase;
-    }
+        function getType() {
+          return parentBase;
+        }
 
-    let compName = kebabCase(pureFileName);
-    compName += '-' + getType();
+        let compName = kebabCase(pureFileName);
+        compName += '-' + getType();
 
-    return pascalCase(compName);
-  },
-  selector: (_, fullPath, pureFileName) => {
-    const parentDir = path.dirname(fullPath);
-    const parentBase = path.basename(parentDir);
+        return pascalCase(compName);
+      },
+      selector: (_, fullPath, pureFileName) => {
+        const parentDir = path.dirname(fullPath);
+        const parentBase = path.basename(parentDir);
 
-    function getType() {
-      return parentBase;
-    }
+        function getType() {
+          return parentBase;
+        }
 
-    const merged = pureFileName + '-' + getType();
+        const merged = pureFileName + '-' + getType();
 
-    return merged;
-  },
+        return merged;
+      },
+    },
+  ],
 };

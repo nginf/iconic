@@ -1,11 +1,4 @@
-export interface Registry {
-  id: string;
-  source: {
-    url: string;
-    branch: string;
-    remoteDir: string;
-  };
-  placeholder?:string;
+export interface RegistryContent {
   svgo?: boolean;
   resolveFiles: (icon: Registry) => Promise<string[]>;
   componentName: (
@@ -18,4 +11,16 @@ export interface Registry {
     fullPath: string,
     pureFileName: string
   ) => string; // It should return kebab-case
+}
+
+export interface Registry {
+  id: string;
+  source: {
+    url: string;
+    branch: string;
+    remoteDir: string;
+  };
+  placeholder?: string;
+
+  contents: Array<RegistryContent>;
 }
