@@ -5,8 +5,12 @@ import { Registry } from './registry-type';
 
 export class IconInserter {
   private _publicApiContent = '';
-  private iconTree: Array<{ name: string; content: string; compName: string }> =
-    [];
+  private iconTree: Array<{
+    name: string;
+    content: string;
+    compName: string;
+    type: string;
+  }> = [];
   constructor(private registry: Registry, public debugMode?: boolean) {}
 
   async init() {}
@@ -16,12 +20,14 @@ export class IconInserter {
     content,
     selector,
     compName,
+    iconType,
   }: {
     svgContent: string;
     newFilePath: string;
     content: string;
     selector: string;
     compName: string;
+    iconType?: string;
   }) {
     const iconPath = path.join(iconsLibPath(), `${newFilePath}.ts`);
 
@@ -35,6 +41,7 @@ export class IconInserter {
       name: selector,
       content: svgContent,
       compName: compName,
+      type: iconType,
     });
   }
 

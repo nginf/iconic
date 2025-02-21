@@ -8,5 +8,6 @@
   [class.!border-amber-400]="isSelected()"
   [attr.aria-label]="icon().name"
 >
+  {{ icon().type }}
   <app-icon [content]="icon().content"></app-icon>
 </button>

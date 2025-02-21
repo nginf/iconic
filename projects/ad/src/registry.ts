@@ -14,6 +14,11 @@ export const AD_REGISTRY: Registry = {
   contents: [
     {
       svgo: true,
+      resolveType: (_, fullPath, pureFileName) => {
+        const parentDir = path.dirname(fullPath);
+        const parentBase = path.basename(parentDir);
+        return parentBase;
+      },
       resolveFiles: async (icon) =>
         await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
       componentName: (_, fullPath, pureFileName) => {
