@@ -4,17 +4,23 @@ import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
 import { Registry } from '../../common/src/lib/registry-type';
 
-const TYPE_SUFFIX = {
-  brands: 'brands',
-  regular: '',
-  solid: 'solid',
-};
+function getType(fullPath: string, prefix?: string) {
+  const parentDir = path.dirname(fullPath);
+  const parentBase = path.basename(parentDir);
+  if (parentBase === 'regular') {
+    return '';
+  }
+  return prefix ? `${prefix}${parentBase}` : parentBase;
+}
 
-function resolveIconName(_: string, fullPath: string, pureFileName: String) {
+function resolveIconName(
+  _: string,
+  fullPath: string,
+  pureFileName: String,
+  prefix?: string
+) {
   const iconName = pureFileName;
-  const parentDir = path.basename(path.dirname(fullPath));
-  const type = parentDir as keyof typeof TYPE_SUFFIX;
-  return iconName + '-' + TYPE_SUFFIX[type];
+  return iconName + getType(fullPath, prefix);
 }
 
 export const FA_REGISTRY: Registry = {
@@ -24,15 +30,23 @@ export const FA_REGISTRY: Registry = {
     branch: '6.x',
     remoteDir: 'svgs/',
   },
+  treeSortOrder: [undefined, 'solid', 'brands'],
   contents: [
     {
+      resolveType: (_, fullPath) => {
+        return getType(fullPath);
+      },
       resolveFiles: async (icon) =>
         await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
       componentName: (fileName, fullPath, pureFileName) => {
-        return pascalCase(resolveIconName(fileName, fullPath, pureFileName));
+        return pascalCase(
+          resolveIconName(fileName, fullPath, pureFileName, '-')
+        );
       },
       selector: (fileName, fullPath, pureFileName) => {
-        return kebabCase(resolveIconName(fileName, fullPath, pureFileName));
+        return kebabCase(
+          resolveIconName(fileName, fullPath, pureFileName, '-')
+        );
       },
     },
   ],
