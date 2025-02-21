@@ -10,4 +10,14 @@ import { ICON_LIBRARIES } from '../../ICON_LIBRARIES';
 })
 export class IntroductionPageComponent {
   iconLibraries = ICON_LIBRARIES;
+
+  usageCode = `
+  import { ChevronDownIcon } from '@nginf/iconic-lu';
+
+  @Component({
+     imports:[ChevronDownIcon],
+     template:' <chevron-down-icon> </chevron-down-icon> '
+  })
+  export class SomeComponent{}
+  `;
 }
