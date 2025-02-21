@@ -4,13 +4,23 @@ import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
 import { Registry } from '../../common/src/lib/registry-type';
 
-function resolveIconName(_: string, fullPath: string, pureName: string) {
+function getType(fullPath: string, prefix?: string) {
   const parentDir = path.dirname(fullPath);
-  const type = path.basename(parentDir);
-  const name = pureName + '-' + type;
-  if (name.includes('svg')) {
-    console.log('PURE ', pureName, ' Type: ', type);
+  const parentBase = path.basename(parentDir);
+  if (parentBase === 'outline') {
+    return '';
   }
+  return prefix ? `${prefix}${parentBase}` : parentBase;
+}
+
+function resolveIconName(
+  _: string,
+  fullPath: string,
+  pureName: string,
+  prefix?: string
+) {
+  const name = pureName + getType(fullPath, prefix);
+
   return name;
 }
 
@@ -23,13 +33,16 @@ export const HI_REGISTRY: Registry = {
   },
   contents: [
     {
+      resolveType: (_, fullPath) => {
+        return getType(fullPath);
+      },
       resolveFiles: async (icon) =>
         await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/outline/*.svg`),
       componentName: (fileName, fullPath, pureName) => {
-        return pascalCase(resolveIconName(fileName, fullPath, pureName));
+        return pascalCase(resolveIconName(fileName, fullPath, pureName, '-'));
       },
       selector: (fileName, fullPath, pureName) => {
-        return kebabCase(resolveIconName(fileName, fullPath, pureName));
+        return kebabCase(resolveIconName(fileName, fullPath, pureName, '-'));
       },
       svgo: {
         plugins: [
@@ -58,13 +71,16 @@ export const HI_REGISTRY: Registry = {
       },
     },
     {
+      resolveType: (_, fullPath) => {
+        return getType(fullPath);
+      },
       resolveFiles: async (icon) =>
         await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/solid/*.svg`),
       componentName: (fileName, fullPath, pureName) => {
-        return pascalCase(resolveIconName(fileName, fullPath, pureName));
+        return pascalCase(resolveIconName(fileName, fullPath, pureName, '-'));
       },
       selector: (fileName, fullPath, pureName) => {
-        return kebabCase(resolveIconName(fileName, fullPath, pureName));
+        return kebabCase(resolveIconName(fileName, fullPath, pureName, '-'));
       },
       svgo: {
         plugins: [
