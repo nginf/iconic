@@ -10,7 +10,13 @@
     "projects/ad/repo": true,
     "projects/md/repo": true,
     "projects/lu/repo": true,
-    "projects/fa/repo": true
+    "projects/fa/repo": true,
+    "projects/hi/repo": true,
+    "projects/ad/src/icons": true,
+    "projects/md/src/icons": true,
+    "projects/fa/src/icons": true,
+    "projects/hi/src/icons": true,
+    "projects/lu/src/icons": true
   },
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"

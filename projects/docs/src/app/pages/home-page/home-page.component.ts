@@ -33,5 +33,10 @@ export class HomePageComponent {
       logo: 'ant-design-logo.svg',
       path: '/docs/ant-design',
     },
+    {
+      name: 'Hero Icons',
+      logo: 'hero-icons-logo.svg',
+      path: '/docs/hero-icons',
+    },
   ];
 }

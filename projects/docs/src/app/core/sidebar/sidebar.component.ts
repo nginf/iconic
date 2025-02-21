@@ -41,6 +41,10 @@ export const SIDEBAR_ROUTES = [
         name: 'Ant Design',
         url: '/docs/ant-design',
       },
+      {
+        name: 'Hero Icons',
+        url: '/docs/hero-icons',
+      },
     ],
   },
 ] as Group[];

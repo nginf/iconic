@@ -1,0 +1,16 @@
+{
+  "name": "hi",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^19.1.0",
+    "@angular/core": "^19.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "fetch": "vite-node ./src/fetch.ts",
+    "generate": "vite-node ./src/generate.ts"
+  }
+}

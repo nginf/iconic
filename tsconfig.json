@@ -17,6 +17,9 @@
       "fa": [
         "./dist/fa"
       ],
+      "hi": [
+        "./dist/hi"
+      ],
       "md": ["./dist/md"],
       "ad": ["./dist/ad"],
       "ng-iconic": ["./dist/ng-iconic"]

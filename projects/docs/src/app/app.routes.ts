@@ -37,6 +37,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'hero-icons',
+        loadComponent: () =>
+          import('./pages/hi-page/hi-page.component').then(
+            (l) => l.HiPageComponent
+          ),
+      },
+      {
         path: 'introduction',
         loadComponent: () =>
           import('./pages/introduction-page/introduction-page.component').then(

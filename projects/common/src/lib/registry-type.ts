@@ -1,5 +1,7 @@
+import { type Config } from 'svgo';
+
 export interface RegistryContent {
-  svgo?: boolean;
+  svgo?: boolean | Config;
   resolveFiles: (icon: Registry) => Promise<string[]>;
   componentName: (
     fileName: string,

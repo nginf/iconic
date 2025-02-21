@@ -1,7 +1,7 @@
 import { capitalCase } from 'change-case';
 import { readFileSync } from 'fs';
 import { access, constants, mkdir, readFile } from 'fs/promises';
-import { optimize } from 'svgo';
+import { Config, optimize } from 'svgo';
 import { iconsLibPath, placeholderPath } from './constants';
 import { Registry, RegistryContent } from './registry-type';
 
@@ -56,7 +56,13 @@ export class IconBuilder {
 
   tryOptimize(svgContent: string) {
     if (this.icon.registryContent.svgo) {
-      return optimize(svgContent).data;
+      const isBooleanConfig =
+        typeof this.icon.registryContent.svgo === 'boolean';
+
+      const config = isBooleanConfig
+        ? undefined
+        : (this.icon.registryContent.svgo as Config);
+      return optimize(svgContent, config).data;
     }
     return svgContent;
   }
