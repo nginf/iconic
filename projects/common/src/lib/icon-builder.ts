@@ -5,10 +5,7 @@ import path from 'path';
 import { optimize } from 'svgo';
 import { iconsLibPath } from './constants';
 import { Registry } from './types';
-
-const PLACEHOLDER_PATH = path.join(__dirname, './icon-placeholder.ts');
-
-const iconPlaceholder = readFileSync(PLACEHOLDER_PATH, 'utf-8');
+import { merge } from "rxjs";
 
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
@@ -23,6 +20,7 @@ export class IconBuilder {
       registry: Registry;
       fullPath: string;
       svgo?: boolean;
+      iconPlaceholder: string;
     },
     private debugMode?: boolean
   ) {}
@@ -32,7 +30,7 @@ export class IconBuilder {
     let svgContent = await readFile(this.icon.path, 'utf-8');
     const componentName = this.resolveComponentName();
     const selector = this.resolveSelector();
-    const placeholderContent = iconPlaceholder;
+    const placeholderContent = this.icon.iconPlaceholder;
 
     svgContent = this.tryOptimize(svgContent);
 
@@ -81,11 +79,17 @@ export class IconBuilder {
   }
 
   private resolveComponentName() {
-    const merged = `${this.icon.registry.componentName(
+    let merged = `${this.icon.registry.componentName(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
     )}Icon`;
+
+    //If starts with number add prefix
+    if(!isNaN(Number(merged[0]))){
+      merged = `${capitalCase(this.icon.registry.id)}${merged}`
+    }
+
     return merged;
   }
 

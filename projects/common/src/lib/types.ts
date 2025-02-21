@@ -5,6 +5,7 @@ export interface Registry {
     branch: string;
     remoteDir: string;
   };
+  placeholder?:string;
   svgo?: boolean;
   resolveFiles: (icon: Registry) => Promise<string[]>;
   componentName: (

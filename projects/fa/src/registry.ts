@@ -13,7 +13,6 @@ const TYPE_SUFFIX = {
 function resolveIconName(_: string, fullPath: string, pureFileName: String) {
   const iconName = pureFileName;
   const parentDir = path.basename(path.dirname(fullPath));
-  console.log(parentDir);
   const type = parentDir as keyof typeof TYPE_SUFFIX;
   return iconName + '-' + TYPE_SUFFIX[type];
 }

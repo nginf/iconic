@@ -15,3 +15,9 @@ export const publicApiPath = function () {
 export const treePath = function () {
   return path.join(process.cwd(), `./src/tree.ts`);
 };
+
+export const placeholderPath = function (placeholder?: string) {
+  return path.join(
+    __dirname,    placeholder ? `./${placeholder}.ts` : './common-placeholder.ts'
+  );
+};
