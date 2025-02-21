@@ -1,4 +1,5 @@
 import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';
+import { Platform } from '@angular/cdk/platform';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { DOCUMENT } from '@angular/common';
 import {
@@ -39,6 +40,7 @@ export class TooltipDirective implements OnDestroy {
   tooltipDelay = input(0, { transform: numberAttribute });
   tooltipContent = input<TemplateRef<unknown>>();
   tooltipId = getTooltipId();
+  private platform = inject(Platform);
 
   private overlay = inject(Overlay);
   private el = inject<ElementRef<HTMLElement>>(ElementRef);
@@ -47,6 +49,10 @@ export class TooltipDirective implements OnDestroy {
   overlayRef: OverlayRef | undefined;
   timeoutId: unknown | undefined;
   escapeSub: Subscription | undefined;
+
+  get isMobile() {
+    return this.platform.IOS || this.platform.ANDROID;
+  }
 
   onFocus() {
     if (this.tooltipEvent() === 'focus') {
@@ -73,6 +79,9 @@ export class TooltipDirective implements OnDestroy {
   }
 
   show() {
+    if (this.isMobile) {
+      return;
+    }
     this.clearSchedule();
     this.timeoutId = setTimeout(() => {
       const originElement = this.el.nativeElement;
