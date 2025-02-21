@@ -5,6 +5,7 @@ import path from 'path';
 import { optimize } from 'svgo';
 import { iconsLibPath } from './constants';
 import { Registry } from './types';
+import { merge } from "rxjs";
 
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
@@ -78,11 +79,17 @@ export class IconBuilder {
   }
 
   private resolveComponentName() {
-    const merged = `${this.icon.registry.componentName(
+    let merged = `${this.icon.registry.componentName(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
     )}Icon`;
+
+    //If starts with number add prefix
+    if(!isNaN(Number(merged[0]))){
+      merged = `${capitalCase(this.icon.registry.id)}${merged}`
+    }
+
     return merged;
   }
 
