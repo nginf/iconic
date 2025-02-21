@@ -9,7 +9,7 @@ export class IconInserter {
     name: string;
     content: string;
     compName: string;
-    type: string;
+    type: string | undefined;
   }> = [];
   constructor(private registry: Registry, public debugMode?: boolean) {}
 
@@ -46,6 +46,7 @@ export class IconInserter {
   }
 
   async commit() {
+    this.sortTree();
     const tsContent = `export const ${this.registry.id.toUpperCase()}_TREE = ${JSON.stringify(
       this.iconTree,
       null,
@@ -57,5 +58,15 @@ export class IconInserter {
       await writeFile(publicApiPath(), this._publicApiContent, 'utf8');
       await writeFile(treePath(), tsContent, 'utf8');
     }
+  }
+
+  private sortTree() {
+    const treeSortOrder = this.registry.treeSortOrder;
+    if (!treeSortOrder) {
+      return;
+    }
+    this.iconTree.sort((a, b) => {
+      return treeSortOrder.indexOf(a.type) - treeSortOrder.indexOf(b.type);
+    });
   }
 }

@@ -6,7 +6,7 @@ export interface RegistryContent {
     fileName: string,
     fullPath: string,
     pureFileName: string
-  ) => string;
+  ) => string | undefined;
   resolveFiles: (icon: Registry) => Promise<string[]>;
   componentName: (
     fileName: string,
@@ -27,6 +27,6 @@ export interface Registry {
     branch: string;
     remoteDir: string;
   };
-
+  treeSortOrder?: (string | undefined)[];
   contents: Array<RegistryContent>;
 }
