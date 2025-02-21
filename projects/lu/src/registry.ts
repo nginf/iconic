@@ -1,7 +1,7 @@
 import { pascalCase } from 'change-case';
 import { glob } from 'glob';
 import { iconsRepoPath } from '../../common/src/lib/constants';
-import { Registry } from '../../common/src/lib/types';
+import { Registry } from '../../common/src/lib/registry-type';
 
 export const LU_REGISTRY: Registry = {
   id: 'lu',
@@ -10,7 +10,6 @@ export const LU_REGISTRY: Registry = {
     branch: 'main',
     remoteDir: 'icons',
   },
-  placeholder: 'lu-placeholder',
   contents: [
     {
       resolveFiles: async (icon) =>

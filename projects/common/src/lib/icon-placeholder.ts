@@ -7,6 +7,7 @@ import { BaseIcon } from '../base-icon';
   styles: `
     :host {
       display: inline-flex;
+      vertical-align:middle;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -20,7 +20,6 @@ export interface Registry {
     branch: string;
     remoteDir: string;
   };
-  placeholder?: string;
 
   contents: Array<RegistryContent>;
 }

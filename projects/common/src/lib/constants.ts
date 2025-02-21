@@ -17,7 +17,5 @@ export const treePath = function () {
 };
 
 export const placeholderPath = function (placeholder?: string) {
-  return path.join(
-    __dirname,    placeholder ? `./${placeholder}.ts` : './common-placeholder.ts'
-  );
+  return path.join(__dirname, './icon-placeholder.ts');
 };

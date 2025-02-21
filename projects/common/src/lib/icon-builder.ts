@@ -1,13 +1,16 @@
 import { capitalCase } from 'change-case';
+import { readFileSync } from 'fs';
 import { access, constants, mkdir, readFile } from 'fs/promises';
 import { optimize } from 'svgo';
-import { iconsLibPath } from './constants';
-import { Registry, RegistryContent } from './types';
+import { iconsLibPath, placeholderPath } from './constants';
+import { Registry, RegistryContent } from './registry-type';
 
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
 
 const CONTENT_TOKEN = 'CONTENT';
+
+const iconPlaceholder = readFileSync(placeholderPath(), 'utf-8');
 
 export class IconBuilder {
   constructor(
@@ -16,7 +19,6 @@ export class IconBuilder {
       path: string;
       registry: Registry;
       fullPath: string;
-      iconPlaceholder: string;
       registryContent: RegistryContent;
     },
     private debugMode?: boolean
@@ -27,7 +29,7 @@ export class IconBuilder {
     let svgContent = await readFile(this.icon.path, 'utf-8');
     const componentName = this.resolveComponentName();
     const selector = this.resolveSelector();
-    const placeholderContent = this.icon.iconPlaceholder;
+    const placeholderContent = iconPlaceholder;
 
     svgContent = this.tryOptimize(svgContent);
 

@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises';
 import path from 'path';
 import { iconsLibPath, publicApiPath, treePath } from './constants';
-import { Registry } from './types';
+import { Registry } from './registry-type';
 
 export class IconInserter {
   private _publicApiContent = '';

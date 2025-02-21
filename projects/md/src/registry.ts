@@ -2,7 +2,7 @@ import { kebabCase, pascalCase } from 'change-case';
 import { glob } from 'glob';
 import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
-import { Registry } from '../../common/src/lib/types';
+import { Registry } from '../../common/src/lib/registry-type';
 
 const TYPE_SUFFIX = {
   materialicons: '',
