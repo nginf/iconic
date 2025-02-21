@@ -1,6 +1,6 @@
 # @nginf/iconic-ad
 
-this package is part of [@nginf/iconic](https://iconic.nginf.dev) library. It provides Ant Design icons
+this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Ant Design icons
 
 ## install
 

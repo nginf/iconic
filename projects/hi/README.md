@@ -1,6 +1,6 @@
 # @nginf/iconic-hi
 
-this package is part of [@nginf/iconic](https://iconic.nginf.dev) library. It provides Hero icons
+this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Hero icons
 
 ## install
 

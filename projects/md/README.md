@@ -1,6 +1,6 @@
 # @nginf/iconic-md
 
-this package is part of [@nginf/iconic](https://iconic.nginf.dev) library. It provides Material Design icons
+this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Material Design icons
 
 ## install
 `npm install @nginf/iconic-md`

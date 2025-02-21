@@ -1,6 +1,6 @@
 # @nginf/iconic-lu
 
-this package is part of [@nginf/iconic](https://iconic.nginf.dev) library. It provides Lucide icons
+this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Lucide icons
 
 ## install
 `npm install @nginf/iconic-lu`
