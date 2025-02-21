@@ -1,11 +1,8 @@
 import { capitalCase } from 'change-case';
-import { readFileSync } from 'fs';
 import { access, constants, mkdir, readFile } from 'fs/promises';
-import path from 'path';
 import { optimize } from 'svgo';
 import { iconsLibPath } from './constants';
 import { Registry } from './types';
-import { merge } from 'rxjs';
 
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
@@ -78,6 +75,10 @@ export class IconBuilder {
     }
   }
 
+  private startsWithNumber() {
+    return !isNaN(Number(this.icon.name[0]));
+  }
+
   private resolveComponentName() {
     let merged = `${this.icon.registry.componentName(
       this.icon.name,
@@ -86,7 +87,7 @@ export class IconBuilder {
     )}Icon`;
 
     //If starts with number add prefix
-    if (!isNaN(Number(merged[0]))) {
+    if (this.startsWithNumber()) {
       merged = `${capitalCase(this.icon.registry.id)}${merged}`;
     }
 
@@ -94,11 +95,15 @@ export class IconBuilder {
   }
 
   private resolveSelector() {
-    const merged = `${this.icon.registry.selector(
+    let merged = `${this.icon.registry.selector(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
     )}-icon`;
+    //If starts with number add prefix
+    if (this.startsWithNumber()) {
+      merged = `${this.icon.registry.id}-${merged}`;
+    }
     return merged;
   }
 

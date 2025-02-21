@@ -42,7 +42,7 @@ export class IconDetailComponent {
     () =>
       `import { ${
         this.icon().compName
-      } } from '@nginf/iconic-${this.registryId()}/${this.icon().name}';`
+      } } from '@nginf/iconic-${this.registryId()}';`
   );
 
   usageCode = computed(() => `<${this.icon().name}></${this.icon().name}>`);

@@ -5,7 +5,7 @@ export const iconsRepoPath = function () {
 };
 
 export const iconsLibPath = function () {
-  return path.join(process.cwd(), './');
+  return path.join(process.cwd(), './src/icons');
 };
 
 export const publicApiPath = function () {

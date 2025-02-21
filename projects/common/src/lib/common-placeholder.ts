@@ -1,23 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  ElementRef,
-  HostAttributeToken,
-  inject,
-  input,
-} from '@angular/core';
-
-const INITIAL_SIZE = 20;
-
-function coerceCssPixelValue(value: any): string {
-  if (value == null) {
-    return '';
-  }
-
-  return typeof value === 'string' ? value : `${value}px`;
-}
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BaseIcon } from '../base-icon';
 @Component({
   selector: 'app-icon',
   template: `CONTENT`,
@@ -29,49 +11,4 @@ function coerceCssPixelValue(value: any): string {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconComponent {
-  stretch = input(false);
-  size = input<number | string>(INITIAL_SIZE);
-
-  private element = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>)
-    .nativeElement;
-
-  get icon() {
-    return this.element.children[0] as SVGElement;
-  }
-
-  constructor() {
-    const ariaHidden = inject(new HostAttributeToken('aria-hidden'), {
-      optional: true,
-    });
-    const ariaRole = inject(new HostAttributeToken('role'), {
-      optional: true,
-    });
-    // If the user has not explicitly set aria-hidden, mark the icon as hidden, as this is
-    // the right thing to do for the majority of icon use-cases.
-    if (!ariaHidden) {
-      this.element.setAttribute('aria-hidden', 'true');
-    }
-
-    if (!ariaRole) {
-      this.element.setAttribute('role', 'img');
-    }
-
-    effect(() => {
-      const icon = this.icon;
-      if (!icon) {
-        return;
-      }
-      icon.setAttribute('fill', 'currentColor');
-      if (this.stretch()) {
-        icon.setAttribute('width', '100%');
-        icon.setAttribute('height', '100%');
-      } else {
-        const coerceWdth = coerceCssPixelValue(this.size());
-        const coerceHeight = coerceCssPixelValue(this.size());
-        icon.setAttribute('width', coerceWdth);
-        icon.setAttribute('height', coerceHeight);
-      }
-    });
-  }
-}
+export class IconComponent extends BaseIcon {}
