@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonIcon } from '../../../../../common/src/public-api';
+import { CommonIcon } from "./common-icon";
 
 @Component({
   selector: 'app-github',
