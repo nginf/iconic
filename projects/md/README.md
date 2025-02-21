@@ -8,8 +8,8 @@ this package is part of [@nginf/iconic](https://iconic.nginf.dev) library. It pr
 # use
 ```ts
    // ts
-   import { MdChevronRight } from '@nginf/iconic-md';
+   import { ChevronLeftIcon } from '@nginf/iconic-md';
    ...
    // html
-  <md-chevron-right></md-chevron-right>
+ <chevron-left-icon></chevron-left-icon>
  ```

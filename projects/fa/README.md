@@ -8,8 +8,8 @@ this package is part of [@nginf/iconic](https://iconic.nginf.dev) library. It pr
 # use
 ```ts
    // ts
-   import { FaChevronDownSolid } from '@nginf/iconic-fa';
+  import { ArrowRotateRightSolidIcon } from '@nginf/iconic-fa';
    ...
    // html
-   <fa-chevron-down-solid></fa-chevron-down-solid>
+ <arrow-rotate-right-solid-icon></arrow-rotate-right-solid-icon>
  ```
