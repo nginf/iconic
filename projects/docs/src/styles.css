@@ -11,6 +11,59 @@ body {
   font-size: 16px;
 }
 
-pre code{
+pre code {
   padding: 10px !important;
+}
+
+:root {
+  --nv-field-height: 36px;
+  --nv-field-padding: 6px 10px;
+}
+
+:root {
+  --nv-background: white;
+  --nv-foreground: #030712;
+  --nv-border-radius: 6px;
+  --nv-primary: #2563eb;
+  --nv-primary-foreground: white;
+
+  --nv-inverse: #1f2937;
+  --nv-inverse-foreground: white;
+
+  --nv-secondary: #4b5563;
+  --nv-secondary-foreground: white;
+
+  --nv-accent: #f3f4f6;
+  --nv-accent-foreground: #111827;
+
+  --nv-danger: #dc2626;
+  --nv-danger-foreground: white;
+
+  --nv-warning: #ea580c;
+  --nv-warning-foreground: white;
+
+  --nv-success: #16a34a;
+  --nv-success-foreground: white;
+
+  --nv-disabled: #f9fafb;
+  --nv-disabled-foreground: #9ca3af;
+
+  --nv-surface: #f9fafb;
+
+  --nv-surface-2: #d1d5db;
+
+  --nv-overlay: 0, 0, 0;
+
+  --nv-divider: #cbd5e1;
+  --nv-border-color: #d1d5db;
+  --nv-border: 1px solid var(--nv-border-color);
+
+  --nv-ring: #9ca3af;
+
+  --nv-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  --nv-mute-start: #e0e0e0;
+  --nv-mute-end: #f0f0f0;
 }

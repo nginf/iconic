@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FA_TREE } from '../../../../../fa/src/tree';
-import { IconPageComponent } from '../../core/browse-page/icon-page.component';
+import {
+  IconPageComponent,
+  IconType,
+} from '../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../models/icon-registry';
 
 @Component({
@@ -20,4 +23,19 @@ export class FaPageComponent {
       url: 'https://creativecommons.org/licenses/by/4.0/',
     },
   };
+
+  types: IconType[] = [
+    {
+      name: 'Default (solid)',
+      value: '',
+    },
+    {
+      name: 'Regular',
+      value: 'regular',
+    },
+    {
+      name: 'Brands',
+      value: 'brands',
+    },
+  ];
 }

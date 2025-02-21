@@ -7,7 +7,7 @@ import { Registry } from '../../common/src/lib/registry-type';
 function getType(fullPath: string, prefix?: string) {
   const parentDir = path.dirname(fullPath);
   const parentBase = path.basename(parentDir);
-  if (parentBase === 'regular') {
+  if (parentBase === 'solid') {
     return '';
   }
   return prefix ? `${prefix}${parentBase}` : parentBase;
@@ -30,7 +30,7 @@ export const FA_REGISTRY: Registry = {
     branch: '6.x',
     remoteDir: 'svgs/',
   },
-  treeSortOrder: [undefined, 'solid', 'brands'],
+  treeSortOrder: [undefined, 'regular', 'brands'],
   contents: [
     {
       resolveType: (_, fullPath) => {

@@ -4,10 +4,9 @@
   tooltipPosition="bottom"
   [title]="icon().name"
   (click)="selected.emit()"
-  class="bg-slate-100 rounded-md p-3 w-16 h-16 flex items-center justify-center hover:bg-slate-200 border-transparent cursor-pointer border border-solid relative"
+  class="bg-slate-100 rounded-md p-3 w-16 h-16 flex items-center justify-center hover:bg-slate-200 border-transparent cursor-pointer border border-solid"
   [class.!border-amber-400]="isSelected()"
   [attr.aria-label]="icon().name"
 >
   <app-icon [content]="icon().content"></app-icon>
-  <span class="absolute bottom-0 italic text-center text-sm">{{ icon().type }}</span>
 </button>
