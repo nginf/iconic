@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { HI_TREE } from "../../../../../hi/src/tree";
-import { IconPageComponent } from "../../core/browse-page/icon-page.component";
-import { IconRegistry } from "../../models/icon-registry";
+import { HI_TREE } from '../../../../../hi/src/tree';
+import {
+  IconPageComponent,
+  IconType,
+} from '../../core/browse-page/icon-page.component';
+import { IconRegistry } from '../../models/icon-registry';
 
 @Component({
   selector: 'app-hi-page',
@@ -20,4 +23,14 @@ export class HiPageComponent {
       url: 'https://github.com/tailwindlabs/heroicons/blob/master/LICENSE',
     },
   };
+  types: IconType[] = [
+    {
+      name: 'Default (outline)',
+      value: '',
+    },
+    {
+      name: 'Solid',
+      value: 'solid',
+    },
+  ];
 }

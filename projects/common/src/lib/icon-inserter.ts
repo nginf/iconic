@@ -5,8 +5,12 @@ import { Registry } from './registry-type';
 
 export class IconInserter {
   private _publicApiContent = '';
-  private iconTree: Array<{ name: string; content: string; compName: string }> =
-    [];
+  private iconTree: Array<{
+    name: string;
+    content: string;
+    compName: string;
+    type: string | undefined;
+  }> = [];
   constructor(private registry: Registry, public debugMode?: boolean) {}
 
   async init() {}
@@ -16,12 +20,14 @@ export class IconInserter {
     content,
     selector,
     compName,
+    iconType,
   }: {
     svgContent: string;
     newFilePath: string;
     content: string;
     selector: string;
     compName: string;
+    iconType?: string;
   }) {
     const iconPath = path.join(iconsLibPath(), `${newFilePath}.ts`);
 
@@ -35,10 +41,12 @@ export class IconInserter {
       name: selector,
       content: svgContent,
       compName: compName,
+      type: iconType,
     });
   }
 
   async commit() {
+    this.sortTree();
     const tsContent = `export const ${this.registry.id.toUpperCase()}_TREE = ${JSON.stringify(
       this.iconTree,
       null,
@@ -50,5 +58,15 @@ export class IconInserter {
       await writeFile(publicApiPath(), this._publicApiContent, 'utf8');
       await writeFile(treePath(), tsContent, 'utf8');
     }
+  }
+
+  private sortTree() {
+    const treeSortOrder = this.registry.treeSortOrder;
+    if (!treeSortOrder) {
+      return;
+    }
+    this.iconTree.sort((a, b) => {
+      return treeSortOrder.indexOf(a.type) - treeSortOrder.indexOf(b.type);
+    });
   }
 }

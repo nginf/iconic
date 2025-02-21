@@ -6,10 +6,10 @@ import { Registry } from '../../common/src/lib/registry-type';
 
 const TYPE_SUFFIX = {
   materialicons: '',
-  materialiconsoutlined: 'Outlined',
-  materialiconsround: 'Round',
-  materialiconssharp: 'Sharp',
-  materialiconstwotone: 'TwoTone',
+  materialiconsoutlined: 'outlined',
+  materialiconsround: 'round',
+  materialiconssharp: 'sharp',
+  materialiconstwotone: 'twotone',
 };
 
 function resolveIconName(_: string, fullPath: string) {
@@ -27,8 +27,14 @@ export const MD_REGISTRY: Registry = {
     branch: 'main',
     remoteDir: 'src',
   },
+  treeSortOrder: [undefined, 'outlined', 'round', 'sharp', 'twotone'],
   contents: [
     {
+      resolveType: (_, fullPath: string) => {
+        const parts = fullPath.split(path.sep);
+        const type = parts[parts.length - 2] as keyof typeof TYPE_SUFFIX;
+        return TYPE_SUFFIX[type];
+      },
       resolveFiles: async (icon) =>
         await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/24px.svg`),
       componentName: (fileName, fullPath) => {

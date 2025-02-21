@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import {
   Component,
   computed,
+  effect,
   inject,
   input,
   model,
@@ -20,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { IconRegistry } from '../../models/icon-registry';
 import { IconModel } from '../../models/icon.model';
 import { ChevronDownComponent } from '../icons/chevron-down.component';
+import { OptionComponent } from '../select/option.component';
+import { SelectComponent } from '../select/select.component';
 import { SourceCodeComponent } from '../source-code/source-code.component';
 import { IconCardComponent } from './icon-card/icon-card.component';
 import { IconDetailComponent } from './icon-detail/icon-detail.component';
@@ -75,6 +78,11 @@ export const COLLAPSE_ON_LEAVE = trigger('collapseOnLeave', [
   ]),
 ]);
 
+export interface IconType {
+  value: string | undefined;
+  name: string;
+}
+
 @Component({
   selector: 'app-icon-page',
   imports: [
@@ -83,6 +91,8 @@ export const COLLAPSE_ON_LEAVE = trigger('collapseOnLeave', [
     FormsModule,
     SourceCodeComponent,
     ChevronDownComponent,
+    SelectComponent,
+    OptionComponent,
   ],
   templateUrl: './icon-page.component.html',
   styleUrl: './icon-page.component.css',
@@ -92,6 +102,10 @@ export class IconPageComponent {
   registry = input.required<IconRegistry>();
 
   openedIcon = signal<IconModel | undefined>(undefined);
+
+  types = input<IconType[]>();
+
+  type = model<IconType>();
 
   http = inject(HttpClient);
 
@@ -106,12 +120,29 @@ export class IconPageComponent {
   );
 
   filteredItems = computed(() => {
+    const type = this.type();
+
+    const typeFiltered = this.tree().filter((item) => item.type == type?.value);
+
     const search = this.search();
     if (!search) {
-      return this.tree();
+      return typeFiltered;
     }
-    return this.tree().filter((item) =>
+    return typeFiltered.filter((item) =>
       item.name.toLowerCase().includes(search.toLowerCase())
     );
   });
+
+  constructor() {
+    effect(() => {
+      const types = this.types();
+      if (types) {
+        this.type.set(types[0]);
+      }
+    });
+  }
+
+  compareWith(v1: any, v2: any) {
+    return v1?.value == v2;
+  }
 }

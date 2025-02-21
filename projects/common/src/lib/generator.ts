@@ -41,7 +41,7 @@ export class Generator {
           },
           this.debugMode
         );
-        const { svgContent, newFilePath, content, selector, compName } =
+        const { svgContent, newFilePath, content, selector, compName,iconType } =
           await iconBuilder.process();
         await iconInseter.add({
           svgContent,
@@ -49,6 +49,7 @@ export class Generator {
           content,
           selector,
           compName,
+          iconType
         });
       }
     }

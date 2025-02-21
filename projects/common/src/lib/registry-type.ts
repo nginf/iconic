@@ -2,6 +2,11 @@ import { type Config } from 'svgo';
 
 export interface RegistryContent {
   svgo?: boolean | Config;
+  resolveType?: (
+    fileName: string,
+    fullPath: string,
+    pureFileName: string
+  ) => string | undefined;
   resolveFiles: (icon: Registry) => Promise<string[]>;
   componentName: (
     fileName: string,
@@ -22,6 +27,6 @@ export interface Registry {
     branch: string;
     remoteDir: string;
   };
-
+  treeSortOrder?: (string | undefined)[];
   contents: Array<RegistryContent>;
 }

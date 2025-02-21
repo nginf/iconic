@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AD_TREE } from '../../../../../ad/src/tree';
-import { IconPageComponent } from '../../core/browse-page/icon-page.component';
+import { IconPageComponent, IconType } from '../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../models/icon-registry';
 
 @Component({
@@ -20,4 +20,19 @@ export class AdPageComponent {
       url: 'https://github.com/ant-design/ant-design-icons?tab=MIT-1-ov-file',
     },
   };
+
+  types: IconType[] = [
+    {
+      name: 'Default (outlined)',
+      value: '',
+    },
+    {
+      name: 'Filled',
+      value: 'filled',
+    },
+    {
+      name: 'TwoTone',
+      value: 'twotone',
+    },
+  ];
 }

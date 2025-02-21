@@ -51,6 +51,11 @@ export class IconBuilder {
       content: iconContent,
       selector,
       compName: componentName,
+      iconType: this.icon.registryContent.resolveType?.(
+        this.icon.name,
+        this.icon.fullPath,
+        this.icon.name.replace('.svg', '')
+      ),
     };
   }
 

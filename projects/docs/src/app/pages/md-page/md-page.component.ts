@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MD_TREE } from '../../../../../md/src/tree';
-import { IconPageComponent } from '../../core/browse-page/icon-page.component';
+import {
+  IconPageComponent,
+  IconType,
+} from '../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../models/icon-registry';
 
 @Component({
@@ -20,4 +23,27 @@ export class MdPageComponent {
       url: 'https://www.apache.org/licenses/LICENSE-2.0.html',
     },
   };
+
+  types: IconType[] = [
+    {
+      name: 'Default (filled)',
+      value: '',
+    },
+    {
+      name: 'Outlined',
+      value: 'outlined',
+    },
+    {
+      name: 'Round',
+      value: 'round',
+    },
+    {
+      name: 'Sharp',
+      value: 'sharp',
+    },
+    {
+      name: 'TwoTone',
+      value: 'twotone',
+    },
+  ];
 }
