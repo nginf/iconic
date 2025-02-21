@@ -1,14 +1,14 @@
-<article class="prose prose-lg">
+<article class="prose prose-lg max-w-[896px] pt-8">
   <h1>Introduction</h1>
 
   <p>
-    <code>&#64;nginf/iconic</code> (Iconic for short) is an Angular library that
-    allows you to use open-source icons in your project. It has one major
-    advantage over other Angular icon libraries—you can use icons as regular
-    components.
+    <code>&#64;nginf/iconic</code> ( <code>Iconic</code> for short) is an
+    Angular library that allows you to use open-source icons in your project. It
+    has one major advantage over other Angular icon libraries—you can use icons
+    as regular components.
   </p>
 
-  <h1>Overview</h1>
+  <h2>Overview</h2>
 
   <p>Most icon libraries follow one of these approaches:</p>
 
@@ -63,7 +63,7 @@
     not include icons itself; instead, it utilizes open-source free icons.
   </p>
 
-  <h1>Installation</h1>
+  <h2>Installation</h2>
 
   <p>
     There is no single global installation command like
@@ -81,7 +81,7 @@
 
   <p>(See the documentation for each icon library for more details.)</p>
 
-  <h1>Usage</h1>
+  <h2>Usage</h2>
 
   <p>
     The usage pattern is the same across all icon libraries. First, you need to
@@ -100,4 +100,26 @@
     may also provide additional input properties, which are documented in their
     respective API sections.
   </p>
+  <h2 class="mb-0">Get Started</h2>
+  <p class="!my-4">Pick the Icon Library</p>
+  <div class="not-prose">
+    <div class="flex flex-col gap-6">
+      @for(library of iconLibraries;track $index){
+      <a
+        [routerLink]="library.path"
+        class="rounded-md shadow-md px-3 py-4 gap-4 flex hover:bg-slate-100 items-center bg-slate-50 w-full"
+      >
+        <img
+          [src]="library.logo"
+          [alt]="library.name + ' logo'"
+          width="30"
+          height="30"
+        />
+        <p class="font-medium text-2xl text-center">
+          {{ library.name }}
+        </p>
+      </a>
+      }
+    </div>
+  </div>
 </article>
