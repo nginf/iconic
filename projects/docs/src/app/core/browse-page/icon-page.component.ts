@@ -105,7 +105,7 @@ export class IconPageComponent {
 
   types = input<IconType[]>();
 
-  type = model<string>();
+  type = model<IconType>();
 
   http = inject(HttpClient);
 
@@ -122,7 +122,7 @@ export class IconPageComponent {
   filteredItems = computed(() => {
     const type = this.type();
 
-    const typeFiltered = this.tree().filter((item) => item.type == type);
+    const typeFiltered = this.tree().filter((item) => item.type == type?.value);
 
     const search = this.search();
     if (!search) {
@@ -137,8 +137,12 @@ export class IconPageComponent {
     effect(() => {
       const types = this.types();
       if (types) {
-        this.type.set(types[0].value);
+        this.type.set(types[0]);
       }
     });
+  }
+
+  compareWith(v1: any, v2: any) {
+    return v1?.value == v2;
   }
 }
