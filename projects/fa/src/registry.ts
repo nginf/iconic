@@ -2,7 +2,7 @@ import { kebabCase, pascalCase } from 'change-case';
 import { glob } from 'glob';
 import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
-import { Registry } from '../../common/src/lib/types';
+import { Registry } from '../../common/src/lib/registry-type';
 
 const TYPE_SUFFIX = {
   brands: 'brands',
@@ -24,12 +24,16 @@ export const FA_REGISTRY: Registry = {
     branch: '6.x',
     remoteDir: 'svgs/',
   },
-  resolveFiles: async (icon) =>
-    await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
-  componentName: (fileName, fullPath, pureFileName) => {
-    return pascalCase(resolveIconName(fileName, fullPath, pureFileName));
-  },
-  selector: (fileName, fullPath, pureFileName) => {
-    return kebabCase(resolveIconName(fileName, fullPath, pureFileName));
-  },
+  contents: [
+    {
+      resolveFiles: async (icon) =>
+        await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/*.svg`),
+      componentName: (fileName, fullPath, pureFileName) => {
+        return pascalCase(resolveIconName(fileName, fullPath, pureFileName));
+      },
+      selector: (fileName, fullPath, pureFileName) => {
+        return kebabCase(resolveIconName(fileName, fullPath, pureFileName));
+      },
+    },
+  ],
 };

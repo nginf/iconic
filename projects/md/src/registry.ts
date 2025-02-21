@@ -2,7 +2,7 @@ import { kebabCase, pascalCase } from 'change-case';
 import { glob } from 'glob';
 import path from 'path';
 import { iconsRepoPath } from '../../common/src/lib/constants';
-import { Registry } from '../../common/src/lib/types';
+import { Registry } from '../../common/src/lib/registry-type';
 
 const TYPE_SUFFIX = {
   materialicons: '',
@@ -10,7 +10,7 @@ const TYPE_SUFFIX = {
   materialiconsround: 'Round',
   materialiconssharp: 'Sharp',
   materialiconstwotone: 'TwoTone',
-}
+};
 
 function resolveIconName(_: string, fullPath: string) {
   const parts = fullPath.split(path.sep);
@@ -27,12 +27,16 @@ export const MD_REGISTRY: Registry = {
     branch: 'main',
     remoteDir: 'src',
   },
-  resolveFiles: async (icon) =>
-    await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/24px.svg`),
-  componentName: (fileName, fullPath) => {
-    return pascalCase(resolveIconName(fileName, fullPath));
-  },
-  selector: (fileName, fullPath) => {
-    return kebabCase(resolveIconName(fileName, fullPath));
-  },
+  contents: [
+    {
+      resolveFiles: async (icon) =>
+        await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/**/24px.svg`),
+      componentName: (fileName, fullPath) => {
+        return pascalCase(resolveIconName(fileName, fullPath));
+      },
+      selector: (fileName, fullPath) => {
+        return kebabCase(resolveIconName(fileName, fullPath));
+      },
+    },
+  ],
 };

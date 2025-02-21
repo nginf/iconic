@@ -1,6 +1,5 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
+  Directive,
   effect,
   ElementRef,
   HostAttributeToken,
@@ -18,18 +17,8 @@ function coerceCssPixelValue(value: any): string {
   return typeof value === 'string' ? value : `${value}px`;
 }
 
-@Component({
-  selector: 'app-icon',
-  template: `CONTENT`,
-  standalone: true,
-  styles: `
-    :host {
-      display: inline-flex;
-    }
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class IconComponent {
+@Directive()
+export class BaseIcon {
   stretch = input(false);
   size = input<number | string>(INITIAL_SIZE);
 

@@ -1,16 +1,16 @@
 import { capitalCase } from 'change-case';
 import { readFileSync } from 'fs';
 import { access, constants, mkdir, readFile } from 'fs/promises';
-import path from 'path';
 import { optimize } from 'svgo';
-import { iconsLibPath } from './constants';
-import { Registry } from './types';
-import { merge } from "rxjs";
+import { iconsLibPath, placeholderPath } from './constants';
+import { Registry, RegistryContent } from './registry-type';
 
 const COMPONENT_NAME_KEY = 'IconComponent';
 const SELECTOR_KEY = 'app-icon';
 
 const CONTENT_TOKEN = 'CONTENT';
+
+const iconPlaceholder = readFileSync(placeholderPath(), 'utf-8');
 
 export class IconBuilder {
   constructor(
@@ -19,8 +19,7 @@ export class IconBuilder {
       path: string;
       registry: Registry;
       fullPath: string;
-      svgo?: boolean;
-      iconPlaceholder: string;
+      registryContent: RegistryContent;
     },
     private debugMode?: boolean
   ) {}
@@ -30,7 +29,7 @@ export class IconBuilder {
     let svgContent = await readFile(this.icon.path, 'utf-8');
     const componentName = this.resolveComponentName();
     const selector = this.resolveSelector();
-    const placeholderContent = this.icon.iconPlaceholder;
+    const placeholderContent = iconPlaceholder;
 
     svgContent = this.tryOptimize(svgContent);
 
@@ -56,7 +55,7 @@ export class IconBuilder {
   }
 
   tryOptimize(svgContent: string) {
-    if (this.icon.svgo) {
+    if (this.icon.registryContent.svgo) {
       return optimize(svgContent).data;
     }
     return svgContent;
@@ -78,31 +77,44 @@ export class IconBuilder {
     }
   }
 
+  private startsWithNumber() {
+    return !isNaN(Number(this.icon.name[0]));
+  }
+
   private resolveComponentName() {
-    let merged = `${this.icon.registry.componentName(
+    let merged = `${this.icon.registryContent.componentName(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
     )}Icon`;
 
     //If starts with number add prefix
-    if(!isNaN(Number(merged[0]))){
-      merged = `${capitalCase(this.icon.registry.id)}${merged}`
+    if (this.startsWithNumber()) {
+      merged = `${capitalCase(this.icon.registry.id)}${merged}`;
     }
 
     return merged;
   }
 
   private resolveSelector() {
-    const merged = `${this.icon.registry.selector(
+    let merged = `${this.icon.registryContent.selector(
       this.icon.name,
       this.icon.fullPath,
       this.icon.name.replace('.svg', '')
     )}-icon`;
+    //If starts with number add prefix
+    if (this.startsWithNumber()) {
+      merged = `${this.icon.registry.id}-${merged}`;
+    }
     return merged;
   }
 
   private resolvenewFilePath() {
-    return `${this.icon.name.replace('.svg', '')}`;
+    const merged = `${this.icon.registryContent.selector(
+      this.icon.name,
+      this.icon.fullPath,
+      this.icon.name.replace('.svg', '')
+    )}`;
+    return merged;
   }
 }

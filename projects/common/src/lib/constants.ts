@@ -5,7 +5,7 @@ export const iconsRepoPath = function () {
 };
 
 export const iconsLibPath = function () {
-  return path.join(process.cwd(), './');
+  return path.join(process.cwd(), './src/icons');
 };
 
 export const publicApiPath = function () {
@@ -17,7 +17,5 @@ export const treePath = function () {
 };
 
 export const placeholderPath = function (placeholder?: string) {
-  return path.join(
-    __dirname,    placeholder ? `./${placeholder}.ts` : './common-placeholder.ts'
-  );
+  return path.join(__dirname, './icon-placeholder.ts');
 };
