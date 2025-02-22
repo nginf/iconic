@@ -1,5 +1,18 @@
-<app-icon-page
-  [types]="types"
-  [registry]="registry"
-  [tree]="tree"
-></app-icon-page>
+<app-icon-page [types]="types" [registry]="registry" [tree]="tree">
+  <app-icon-page-description>
+    <p>
+      Material Design Icons includes over 10,000 icons in its library, so the
+      package import contains 10,000 component exports. This might slow down the
+      application's initial startup time. However, tree-shaking will work as
+      expected during the build process. There is no perfect solution for this
+      issue yet. We are still considering some options, one of which is
+      second-entry points, though it has its own downsides (see more
+      <a
+        href="https://angular.dev/tools/libraries/angular-package-format#entrypoints-and-code-splitting"
+        target="_blank"
+        style="text-decoration: underline !important"
+        >here</a
+      >).
+    </p>
+  </app-icon-page-description>
+</app-icon-page>

@@ -5,10 +5,11 @@ import {
   IconType,
 } from '../../core/browse-page/icon-page.component';
 import { IconRegistry } from '../../models/icon-registry';
+import { IconPageDescriptionComponent } from "../../core/browse-page/icon-page-description/icon-page-description.component";
 
 @Component({
   selector: 'app-md-page',
-  imports: [IconPageComponent],
+  imports: [IconPageComponent, IconPageDescriptionComponent],
   templateUrl: './md-page.component.html',
   styleUrl: './md-page.component.css',
 })

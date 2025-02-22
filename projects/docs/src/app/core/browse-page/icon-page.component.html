@@ -17,7 +17,6 @@
         Webpage
       </a>
     </div>
-
     <h2 class="text-3xl mb-4">Installation</h2>
     <app-source-code language="bash" [code]="installCode()"></app-source-code>
 
@@ -51,6 +50,7 @@
           To follow best practices, the icon component will have `role="img"`
           and `aria-hidden="true"` by default.
         </p>
+        <ng-content select="app-icon-page-description"></ng-content>
       </div>
 
       }
