@@ -13,5 +13,15 @@
   "scripts": {
     "fetch": "vite-node ./src/fetch.ts",
     "generate": "vite-node ./src/generate.ts"
-  }
+  },
+  "repository": {
+    "url": "https://github.com/nginf/iconic"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "angular-library",
+    "hero-icons"
+  ]
 }

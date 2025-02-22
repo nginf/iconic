@@ -16,7 +16,8 @@
     "projects/md/src/icons": true,
     "projects/fa/src/icons": true,
     "projects/hi/src/icons": true,
-    "projects/lu/src/icons": true
+    "projects/lu/src/icons": true,
+    "dist": true
   },
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"
