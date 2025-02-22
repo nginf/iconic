@@ -7,7 +7,7 @@ import {
   input,
 } from '@angular/core';
 
-const INITIAL_SIZE = 20;
+const INITIAL_SIZE = 24;
 
 function coerceCssPixelValue(value: any): string {
   if (value == null) {
