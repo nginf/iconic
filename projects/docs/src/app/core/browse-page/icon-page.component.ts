@@ -7,6 +7,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import {
   Component,
@@ -18,6 +19,7 @@ import {
   signal,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { IconRegistry } from '../../models/icon-registry';
 import { IconModel } from '../../models/icon.model';
 import { ChevronDownComponent } from '../icons/chevron-down.component';
@@ -99,6 +101,10 @@ export interface IconType {
   animations: [EXPAND_ON_ENTER_ANIMATION, COLLAPSE_ON_LEAVE],
 })
 export class IconPageComponent {
+  title = inject(Title);
+  meta = inject(Meta);
+  document = inject(DOCUMENT);
+
   registry = input.required<IconRegistry>();
 
   openedIcon = signal<IconModel | undefined>(undefined);
@@ -139,6 +145,29 @@ export class IconPageComponent {
       if (types) {
         this.type.set(types[0]);
       }
+    });
+
+    effect(() => {
+      const label = this.registry().name;
+      const subTitle = `Angular icon library for ${label}`;
+      this.title.setTitle(`${label} | @nginf/iconic`);
+      if (subTitle) {
+        this.meta.updateTag({ name: 'description', content: subTitle });
+      }
+      this.meta.addTags([
+        { property: 'og:title', content: label },
+        {
+          property: 'og:description',
+          content: subTitle ?? label,
+        },
+        {
+          property: 'og:image',
+          content: 'https://nginf.github.io/iconic/logo.png',
+        },
+        { property: 'og:image:alt', content: '@nginf/iconic logo' },
+        { property: 'og:url', content: this.document.location.href },
+        { property: 'og:type', content: 'website' },
+      ]);
     });
   }
 
