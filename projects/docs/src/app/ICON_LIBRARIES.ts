@@ -4,19 +4,9 @@ export const ICON_LIBRARIES: Array<{
   path: string;
 }> = [
   {
-    name: 'Lucide Icons',
-    logo: 'lucide-logo.svg',
-    path: '/docs/lucide',
-  },
-  {
-    name: 'Hero Icons',
-    logo: 'hero-icons-logo.svg',
-    path: '/docs/hero-icons',
-  },
-  {
-    name: 'Material Icons',
-    logo: 'material-logo.svg',
-    path: '/docs/material-design',
+    name: 'Ant Design',
+    logo: 'ant-design-logo.svg',
+    path: '/docs/ant-design',
   },
   {
     name: 'Font Awesome',
@@ -24,8 +14,18 @@ export const ICON_LIBRARIES: Array<{
     path: '/docs/font-awesome',
   },
   {
-    name: 'Ant Design',
-    logo: 'ant-design-logo.svg',
-    path: '/docs/ant-design',
+    name: 'Hero Icons',
+    logo: 'hero-icons-logo.svg',
+    path: '/docs/hero-icons',
+  },
+  {
+    name: 'Lucide Icons',
+    logo: 'lucide-logo.svg',
+    path: '/docs/lucide',
+  },
+  {
+    name: 'Material Icons',
+    logo: 'material-logo.svg',
+    path: '/docs/material-design',
   },
 ];

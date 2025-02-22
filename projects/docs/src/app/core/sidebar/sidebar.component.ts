@@ -26,24 +26,24 @@ export const SIDEBAR_ROUTES = [
     name: 'Icons',
     children: [
       {
-        name: 'Lucide',
-        url: '/docs/lucide',
-      },
-      {
-        name: 'Hero Icons',
-        url: '/docs/hero-icons',
-      },
-      {
-        name: 'Material Design',
-        url: '/docs/material-design',
+        name: 'Ant Design',
+        url: '/docs/ant-design',
       },
       {
         name: 'Font Awesome',
         url: '/docs/font-awesome',
       },
       {
-        name: 'Ant Design',
-        url: '/docs/ant-design',
+        name: 'Hero Icons',
+        url: '/docs/hero-icons',
+      },
+      {
+        name: 'Lucide',
+        url: '/docs/lucide',
+      },
+      {
+        name: 'Material Design',
+        url: '/docs/material-design',
       },
     ],
   },
