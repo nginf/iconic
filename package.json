@@ -13,7 +13,8 @@
     "publish:lu": "cd projects/lu && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=lu && cd dist/lu && npm publish --access public",
     "publish:md": "cd projects/md && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=md && cd dist/md && npm publish --access public",
     "publish:fa": "cd projects/fa && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=fa && cd dist/fa && npm publish --access public",
-    "publish:hi": "cd projects/hi && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=hi && cd dist/hi && npm publish --access public"
+    "publish:hi": "cd projects/hi && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=hi && cd dist/hi && npm publish --access public",
+    "clean":"find . -type d -name \"icons\" -exec rm -rf {} +"
   },
   "private": true,
   "dependencies": {
