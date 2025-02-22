@@ -1,7 +1,7 @@
 {
   "name": "@nginf/iconic-hi",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": ">=17.0.0",
     "@angular/core": ">=17.0.0"
