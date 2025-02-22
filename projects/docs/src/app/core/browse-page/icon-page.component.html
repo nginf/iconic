@@ -55,7 +55,7 @@
 
       }
     </div>
-    <div class="flex w-full mt-10 gap-2">
+    <div class="flex flex-col lg:flex-row w-full mt-10 gap-2">
       <div
         class="flex-1 bg-slate-100 rounded-md flex gap-2 border border-solid border-transparent relative"
       >
@@ -74,7 +74,7 @@
       <app-select
         [compareWith]="compareWith"
         [placeholder]="types[0].name"
-        class="w-[200px] h-full type-select"
+        class="w-full lg:w-[200px] h-full type-select"
         [(ngModel)]="type"
       >
         @for(type of types; track $index){
