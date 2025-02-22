@@ -4,7 +4,7 @@ import { IconComponent } from '../../../core/icon/icon.component';
 import { SourceCodeComponent } from '../../../core/source-code/source-code.component';
 import { IconModel } from '../../../models/icon.model';
 import { IconButtonComponent } from '../../icon-button/icon-button.component';
-import { CloseComponent } from '../../icons/close.component';
+import { CloseComponent } from '../../icon/close.component';
 
 @Component({
   selector: 'app-icon-detail',

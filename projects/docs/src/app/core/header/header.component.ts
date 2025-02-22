@@ -4,8 +4,8 @@ import { Component, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter, take, takeUntil } from 'rxjs';
 import { IconButtonComponent } from '../icon-button/icon-button.component';
-import { GithubComponent } from "../icons/github.component";
-import { MenuComponent } from '../icons/menu.component';
+import { GithubComponent } from "../icon/github.component";
+import { MenuComponent } from '../icon/menu.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({

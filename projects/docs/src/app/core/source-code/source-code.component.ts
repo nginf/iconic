@@ -1,8 +1,8 @@
 import { Component, input, signal } from '@angular/core';
 import { Highlight } from 'ngx-highlightjs';
 import { IconButtonComponent } from "../icon-button/icon-button.component";
-import { CheckComponent } from '../icons/check.component';
-import { CopyComponent } from '../icons/copy.component';
+import { CopyComponent } from '../icon/copy.component';
+import { CheckComponent } from "../icon/check.component";
 
 @Component({
   selector: 'app-source-code',

@@ -22,12 +22,12 @@ import { FormsModule } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { IconRegistry } from '../../models/icon-registry';
 import { IconModel } from '../../models/icon.model';
-import { ChevronDownComponent } from '../icons/chevron-down.component';
 import { OptionComponent } from '../select/option.component';
 import { SelectComponent } from '../select/select.component';
 import { SourceCodeComponent } from '../source-code/source-code.component';
 import { IconCardComponent } from './icon-card/icon-card.component';
 import { IconDetailComponent } from './icon-detail/icon-detail.component';
+import { ChevronDownComponent } from "../icon/chevron-down.component";
 
 export const EXPAND_ON_ENTER_ANIMATION = trigger('expandOnEnter', [
   transition(':enter', [
