@@ -19,8 +19,8 @@
     "projects/lu/src/icons": true,
     "dist": true
   },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "always"
-  },
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": "always"
+  // },
   "prettier.configPath": "./.prettierrc"
 }
