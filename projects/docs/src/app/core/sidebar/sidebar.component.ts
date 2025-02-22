@@ -30,6 +30,10 @@ export const SIDEBAR_ROUTES = [
         url: '/docs/lucide',
       },
       {
+        name: 'Hero Icons',
+        url: '/docs/hero-icons',
+      },
+      {
         name: 'Material Design',
         url: '/docs/material-design',
       },
@@ -40,10 +44,6 @@ export const SIDEBAR_ROUTES = [
       {
         name: 'Ant Design',
         url: '/docs/ant-design',
-      },
-      {
-        name: 'Hero Icons',
-        url: '/docs/hero-icons',
       },
     ],
   },

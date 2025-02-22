@@ -9,6 +9,11 @@ export const ICON_LIBRARIES: Array<{
     path: '/docs/lucide',
   },
   {
+    name: 'Hero Icons',
+    logo: 'hero-icons-logo.svg',
+    path: '/docs/hero-icons',
+  },
+  {
     name: 'Material Icons',
     logo: 'material-logo.svg',
     path: '/docs/material-design',
@@ -22,10 +27,5 @@ export const ICON_LIBRARIES: Array<{
     name: 'Ant Design',
     logo: 'ant-design-logo.svg',
     path: '/docs/ant-design',
-  },
-  {
-    name: 'Hero Icons',
-    logo: 'hero-icons-logo.svg',
-    path: '/docs/hero-icons',
   },
 ];
