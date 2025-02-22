@@ -88,8 +88,8 @@ export class IconBuilder {
     }
   }
 
-  private startsWithNumber() {
-    return !isNaN(Number(this.icon.name[0]));
+  private startsWithNumber(name: string) {
+    return !isNaN(Number(name[0]));
   }
 
   private resolveComponentName() {
@@ -100,7 +100,7 @@ export class IconBuilder {
     )}Icon`;
 
     //If starts with number add prefix
-    if (this.startsWithNumber()) {
+    if (this.startsWithNumber(merged)) {
       merged = `${capitalCase(this.icon.registry.id)}${merged}`;
     }
 
@@ -114,7 +114,7 @@ export class IconBuilder {
       this.icon.name.replace('.svg', '')
     )}-icon`;
     //If starts with number add prefix
-    if (this.startsWithNumber()) {
+    if (this.startsWithNumber(merged)) {
       merged = `${this.icon.registry.id}-${merged}`;
     }
     return merged;
