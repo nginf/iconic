@@ -8,6 +8,19 @@
 
 see docs on [link](https://nginf.github.io/iconic/)
 
+## NPM Packages
+
+[Ant Design](https://www.npmjs.com/package/@nginf/iconic-ad)
+
+[Font Awesome](https://www.npmjs.com/package/@nginf/iconic-fa)
+
+[Hero Icons](https://www.npmjs.com/package/@nginf/iconic-hi)
+
+[Lucide Icons](https://www.npmjs.com/package/@nginf/iconic-lu)
+
+[Material Icons](https://www.npmjs.com/package/@nginf/iconic-md)
+
+
 ## Creators
 
 |                                                           |                                                                |
