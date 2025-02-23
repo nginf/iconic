@@ -33,4 +33,9 @@ export const ICON_LIBRARIES: Array<{
     logo: 'material-logo.svg',
     path: '/docs/material-design',
   },
+  {
+    name: 'Remix Icons',
+    logo: 'remix-icon-logo.svg',
+    path: '/docs/remix-icons',
+  },
 ];

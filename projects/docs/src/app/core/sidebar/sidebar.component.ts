@@ -49,6 +49,10 @@ export const SIDEBAR_ROUTES = [
         name: 'Material Design',
         url: '/docs/material-design',
       },
+      {
+        name: 'Remix Icons',
+        url: '/docs/remix-icons',
+      },
     ],
   },
 ] as Group[];

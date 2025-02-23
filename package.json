@@ -15,6 +15,7 @@
     "publish:fa": "cd projects/fa && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=fa && cd dist/fa && npm publish --access public",
     "publish:hi": "cd projects/hi && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=hi && cd dist/hi && npm publish --access public",
     "publish:bs": "cd projects/bs && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=bs && cd dist/bs && npm publish --access public",
+    "publish:ri": "cd projects/ri && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=ri && cd dist/ri && npm publish --access public",
     "publish:all": "npm run publish:ad && npm run publish:lu && npm run publish:fa && npm run publish:hi && npm run publish:md && npm run publish:bs && npm run clean",
     "clean": "find . -type d -name \"icons\" -exec rm -rf {} +"
   },

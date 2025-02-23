@@ -51,6 +51,13 @@ export const routes: Routes = [
         )
       },
       {
+        path:"remix-icons",
+        loadComponent: () =>
+          import('./pages/ri-page/ri-page.component').then(
+            (l) => l.RiPageComponent
+        )
+      },
+      {
         path: 'introduction',
         loadComponent: () =>
           import('./pages/introduction-page/introduction-page.component').then(
