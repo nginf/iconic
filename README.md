@@ -22,6 +22,7 @@ see docs on [link](https://nginf.github.io/iconic/)
 
 [Bootstrap Icons](https://www.npmjs.com/package/@nginf/iconic-bs)
 
+[Remix Icons](https://www.npmjs.com/package/@nginf/iconic-ri)
 
 ## Creators
 

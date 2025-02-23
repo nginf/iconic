@@ -1,0 +1,20 @@
+<svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="3" x2="3" y1="3" y2="24">
+    <stop offset="0" stop-color="#05a0fa" />
+    <stop offset="1" stop-color="#4785ff" />
+  </linearGradient>
+  <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="3" x2="3" y1="3" y2="29">
+    <stop offset="0" stop-color="#1a8cff" />
+    <stop offset="1" stop-color="#0557fa" />
+  </linearGradient>
+  <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="22" x2="22" y1="1" y2="9">
+    <stop offset="0" stop-color="#ff463a" />
+    <stop offset="1" stop-color="#ff1f5a" />
+  </linearGradient>
+  <path
+    d="m19.2887 3.00389c-.0959-.00259-.1922-.00389-.2887-.00389h-16v21h16c5.799 0 10.5-4.701 10.5-10.5 0-.7892-.0871-1.558-.2521-2.2975-.9707.5094-2.0757.7975-3.2479.7975-3.866 0-7-3.13401-7-7 0-.69355.1009-1.36354.2887-1.99611z"
+    fill="url(#a)" />
+  <path d="m3 3 26 26h-26z" fill="url(#b)" />
+  <path d="m26 9c2.2091 0 4-1.79086 4-4s-1.7909-4-4-4-4 1.79086-4 4 1.7909 4 4 4z" fill="url(#c)" />
+</svg>

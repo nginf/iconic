@@ -25,7 +25,12 @@
       ],
       "md": ["./dist/md"],
       "ad": ["./dist/ad"],
-      "ng-iconic": ["./dist/ng-iconic"]
+      "ng-iconic": [
+        "./dist/ng-iconic"
+      ],
+      "ri": [
+        "./dist/ri"
+      ]
     },
     "esModuleInterop": true,
     "sourceMap": true,
