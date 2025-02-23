@@ -14,6 +14,9 @@
       "lu": [
         "./dist/lu"
       ],
+      "bs": [
+        "./dist/bs"
+      ],
       "fa": [
         "./dist/fa"
       ],

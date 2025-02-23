@@ -12,9 +12,7 @@
   "sideEffects": false,
   "scripts": {
     "fetch": "vite-node ./src/fetch.ts",
-    "fetch:watch": "vite-node --watch ./src/fetch.ts",
-    "generate": "vite-node ./src/generate.ts",
-    "generate:watch": "vite-node --watch ./src/generate.ts"
+    "generate": "vite-node ./src/generate.ts"
   },
   "repository": {
     "url": "https://github.com/nginf/iconic"
