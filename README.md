@@ -20,6 +20,8 @@ see docs on [link](https://nginf.github.io/iconic/)
 
 [Material Icons](https://www.npmjs.com/package/@nginf/iconic-md)
 
+[Bootstrap Icons](https://www.npmjs.com/package/@nginf/iconic-bs)
+
 
 ## Creators
 

@@ -1,9 +1,9 @@
 {
-  "name": "bs",
+  "name": "@nginf/iconic-bs",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
@@ -12,5 +12,15 @@
     "fetch": "vite-node ./src/fetch.ts",
     "generate": "vite-node ./src/generate.ts"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+    "url": "https://github.com/nginf/iconic"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "angular-library",
+    "bootstrao-icons"
+  ]
 }

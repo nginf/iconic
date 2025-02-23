@@ -44,6 +44,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path:"bootstrap-icons",
+        loadComponent: () =>
+          import('./pages/bs-page/bs-page.component').then(
+            (l) => l.BsPageComponent
+        )
+      },
+      {
         path: 'introduction',
         loadComponent: () =>
           import('./pages/introduction-page/introduction-page.component').then(

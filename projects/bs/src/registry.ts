@@ -16,6 +16,12 @@ export const LU_REGISTRY: Registry = {
         await glob(`${iconsRepoPath()}/${icon.source.remoteDir}/*.svg`),
       componentName: (fileName) => pascalCase(fileName.replace('.svg', '')),
       selector: (fileName) => fileName.replace('.svg', ''),
+      resolveType(fileName, fullPath, pureFileName) {
+        if (fileName.includes('-fill')) {
+          return 'fill';
+        }
+        return '';
+      },
     },
   ],
 };
