@@ -27,7 +27,8 @@ import { SelectComponent } from '../select/select.component';
 import { SourceCodeComponent } from '../source-code/source-code.component';
 import { IconCardComponent } from './icon-card/icon-card.component';
 import { IconDetailComponent } from './icon-detail/icon-detail.component';
-import { ChevronDownComponent } from "../icon/chevron-down.component";
+import { ChevronDownComponent } from '../icon/chevron-down.component';
+import Fuse from 'fuse.js';
 
 export const EXPAND_ON_ENTER_ANIMATION = trigger('expandOnEnter', [
   transition(':enter', [
@@ -125,18 +126,18 @@ export class IconPageComponent {
     () => `npm install @nginf/iconic-${this.registry().id}`
   );
 
+  fuse: Fuse<IconModel> | undefined;
+
   filteredItems = computed(() => {
     const type = this.type();
 
     const typeFiltered = this.tree().filter((item) => item.type == type?.value);
 
     const search = this.search();
-    if (!search) {
+    if (!search || !this.fuse) {
       return typeFiltered;
     }
-    return typeFiltered.filter((item) =>
-      item.name.toLowerCase().includes(search.toLowerCase())
-    );
+    return this.fuse.search(search).map((r) => r.item);
   });
 
   constructor() {
@@ -145,6 +146,15 @@ export class IconPageComponent {
       if (types) {
         this.type.set(types[0]);
       }
+    });
+
+    effect(() => {
+      const tree = this.tree();
+      this.fuse = new Fuse(tree, {
+        includeScore: true,
+        threshold: 0.3,
+        keys: ['name','compName'], // Not needed for an array of strings
+      });
     });
 
     effect(() => {

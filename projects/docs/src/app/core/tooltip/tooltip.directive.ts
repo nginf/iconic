@@ -171,7 +171,7 @@ export class TooltipDirective implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.clearSchedule();
+    this.hide();
     this.escapeSub?.unsubscribe();
   }
 }
