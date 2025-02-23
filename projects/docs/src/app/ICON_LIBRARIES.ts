@@ -9,6 +9,11 @@ export const ICON_LIBRARIES: Array<{
     path: '/docs/ant-design',
   },
   {
+    name: 'Bootstrap Icons',
+    logo: 'bootstrap-logo.svg',
+    path: '/docs/bootstrap-icons',
+  },
+  {
     name: 'Font Awesome',
     logo: 'font-awesome-logo.svg',
     path: '/docs/font-awesome',

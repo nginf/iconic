@@ -1,7 +1,6 @@
 {
-  "name": "@nginf/iconic-ad",
-  "private": false,
-  "version": "0.0.8",
+  "name": "@nginf/iconic-bs",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": ">=17.0.0",
     "@angular/core": ">=17.0.0"
@@ -9,11 +8,11 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
   "scripts": {
     "fetch": "vite-node ./src/fetch.ts",
     "generate": "vite-node ./src/generate.ts"
   },
+  "sideEffects": false,
   "repository": {
     "url": "https://github.com/nginf/iconic"
   },
@@ -22,6 +21,6 @@
     "javascript",
     "typescript",
     "angular-library",
-    "ant-design-icons"
+    "bootstrao-icons"
   ]
 }

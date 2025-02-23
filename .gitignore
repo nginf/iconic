@@ -43,14 +43,6 @@ Thumbs.db
 
 
 # Icon libraries
-/projects/lu/repo
-/projects/md/repo
-/projects/ad/repo
-/projects/fa/repo
-/projects/hi/repo
 
-/projects/fa/src/icons
-/projects/lu/src/icons
-/projects/ad/src/icons
-/projects/md/src/icons
-/projects/hi/src/icons
+/projects/**/repo
+/projects/**/src/icons

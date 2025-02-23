@@ -30,6 +30,10 @@ export const SIDEBAR_ROUTES = [
         url: '/docs/ant-design',
       },
       {
+        name: 'Bootstrap Icons',
+        url: '/docs/bootstrap-icons',
+      },
+      {
         name: 'Font Awesome',
         url: '/docs/font-awesome',
       },
