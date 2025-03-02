@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:docs": "node dist/docs/server/server.mjs",
-    "deploy": "ng deploy --cname=icons.ngverse.dev",
+    "deploy": "ng deploy --base-href=/icons/",
     "publish:ad": "cd projects/ad && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=ad && cd dist/ad && npm publish --access public",
     "publish:lu": "cd projects/lu && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=lu && cd dist/lu && npm publish --access public",
     "publish:md": "cd projects/md && npm run fetch && npm run generate && npm version patch && cd ../../ && NODE_OPTIONS='--max-old-space-size=14192' ng build --project=md && cd dist/md && npm publish --access public",
