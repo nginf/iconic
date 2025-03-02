@@ -11,26 +11,13 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
-      "lu": [
-        "./dist/lu"
-      ],
-      "bs": [
-        "./dist/bs"
-      ],
-      "fa": [
-        "./dist/fa"
-      ],
-      "hi": [
-        "./dist/hi"
-      ],
+      "lu": ["./dist/lu"],
+      "bs": ["./dist/bs"],
+      "fa": ["./dist/fa"],
+      "hi": ["./dist/hi"],
       "md": ["./dist/md"],
       "ad": ["./dist/ad"],
-      "ng-iconic": [
-        "./dist/ng-iconic"
-      ],
-      "ri": [
-        "./dist/ri"
-      ]
+      "ri": ["./dist/ri"]
     },
     "esModuleInterop": true,
     "sourceMap": true,

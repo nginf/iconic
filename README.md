@@ -6,7 +6,7 @@
 
 `@ngverse/icons` is an Angular library that allows you to use popular open-source icons as regular components.
 
-see docs on [link](https://nginf.github.io/iconic/)
+see docs on [link](https://ngverse.github.io/icons/)
 
 ## NPM Packages
 

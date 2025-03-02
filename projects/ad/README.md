@@ -1,6 +1,6 @@
 # @ngverse/icons-ad
 
-this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Ant Design icons
+this package is part of [@ngverse/icons](https://ngverse.github.io/icons/) library. It provides Ant Design icons
 
 ## install
 

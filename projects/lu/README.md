@@ -1,6 +1,6 @@
 # @ngverse/icons-lu
 
-this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Lucide icons
+this package is part of [@ngverse/icons](https://ngverse.github.io/icons/) library. It provides Lucide icons
 
 ## install
 `npm install @ngverse/icons-lu`

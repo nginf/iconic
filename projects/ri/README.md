@@ -1,6 +1,6 @@
 # @ngverse/icons-ri
 
-this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Remix Icons
+this package is part of [@ngverse/icons](https://ngverse.github.io/icons/) library. It provides Remix Icons
 
 ## install
 
