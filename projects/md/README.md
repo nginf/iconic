@@ -1,14 +1,14 @@
-# @nginf/iconic-md
+# @ngverse/icons-md
 
-this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Material Design icons
+this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Material Design icons
 
 ## install
-`npm install @nginf/iconic-md`
+`npm install @ngverse/icons-md`
 
 # use
 ```ts
    // ts
-   import { ChevronLeftIcon } from '@nginf/iconic-md';
+   import { ChevronLeftIcon } from '@ngverse/icons-md';
    ...
    // html
  <chevron-left-icon></chevron-left-icon>

@@ -1,5 +1,5 @@
 {
-  "name": "@nginf/iconic-bs",
+  "name": "@ngverse/icons-bs",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": ">=17.0.0",
@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "repository": {
-    "url": "https://github.com/nginf/iconic"
+    "url": "https://github.com/ngverse/icons"
   },
   "keywords": [
     "angular",

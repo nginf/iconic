@@ -18,7 +18,7 @@ export class IntroductionPageComponent {
   document = inject(DOCUMENT);
 
   usageCode = `
-  import { ChevronDownIcon } from '@nginf/iconic-lu';
+  import { ChevronDownIcon } from '@ngverse/icons-lu';
 
   @Component({
      imports:[ChevronDownIcon],
@@ -28,19 +28,19 @@ export class IntroductionPageComponent {
   `;
 
   constructor() {
-    this.title.setTitle('@nginf/iconic');
+    this.title.setTitle('@ngverse/icons');
 
     this.meta.addTags([
-      { property: 'og:title', content: '@nginf/iconic' },
+      { property: 'og:title', content: '@ngverse/icons' },
       {
         property: 'og:description',
-        content: 'Introduction page of @Nginf/iconic',
+        content: 'Introduction page of @ngverse/icons',
       },
       {
         property: 'og:image',
         content: 'https://nginf.github.io/iconic/logo.png',
       },
-      { property: 'og:image:alt', content: '@nginf/iconic logo' },
+      { property: 'og:image:alt', content: '@ngverse/icons logo' },
       { property: 'og:url', content: this.document.location.href },
       { property: 'og:type', content: 'website' },
     ]);

@@ -1,14 +1,14 @@
-# @nginf/iconic-lu
+# @ngverse/icons-lu
 
-this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Lucide icons
+this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Lucide icons
 
 ## install
-`npm install @nginf/iconic-lu`
+`npm install @ngverse/icons-lu`
 
 # use
 ```ts
    // ts
-   import { ChevronRightIcon } from '@nginf/iconic-lu';
+   import { ChevronRightIcon } from '@ngverse/icons-lu';
    ...
    // html
  <chevron-right-icon></chevron-right-icon>

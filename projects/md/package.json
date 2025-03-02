@@ -1,5 +1,5 @@
 {
-  "name": "@nginf/iconic-md",
+  "name": "@ngverse/icons-md",
   "private": false,
   "version": "0.0.6",
   "peerDependencies": {
@@ -17,7 +17,7 @@
     "generate:watch": "vite-node --watch ./src/generate.ts"
   },
   "repository": {
-    "url": "https://github.com/nginf/iconic"
+    "url": "https://github.com/ngverse/icons"
   },
   "keywords": [
     "angular",
