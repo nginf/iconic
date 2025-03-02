@@ -1,6 +1,6 @@
 # @ngverse/icons-hi
 
-this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Hero icons
+this package is part of [@ngverse/icons](https://ngverse.github.io/icons/) library. It provides Hero icons
 
 ## install
 

@@ -1,6 +1,6 @@
 # @ngverse/icons-absd
 
-this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Bootstrap Icons
+this package is part of [@ngverse/icons](https://ngverse.github.io/icons/) library. It provides Bootstrap Icons
 
 ## install
 

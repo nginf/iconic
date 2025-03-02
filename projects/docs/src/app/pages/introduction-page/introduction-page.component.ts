@@ -38,7 +38,7 @@ export class IntroductionPageComponent {
       },
       {
         property: 'og:image',
-        content: 'https://nginf.github.io/iconic/logo.png',
+        content: 'https://ngverse.github.io/icons/logo.png',
       },
       { property: 'og:image:alt', content: '@ngverse/icons logo' },
       { property: 'og:url', content: this.document.location.href },
