@@ -17,10 +17,10 @@ export class HomePageComponent {
   document = inject(DOCUMENT);
 
   constructor() {
-    this.title.setTitle('@nginf/iconic');
+    this.title.setTitle('@ngverse/icons');
 
     this.meta.addTags([
-      { property: 'og:title', content: '@nginf/iconic' },
+      { property: 'og:title', content: '@ngverse/icons' },
       {
         property: 'og:description',
         content: 'Collection of Angular open-source icon libraries',
@@ -29,7 +29,7 @@ export class HomePageComponent {
         property: 'og:image',
         content: 'https://nginf.github.io/iconic/logo.png',
       },
-      { property: 'og:image:alt', content: '@nginf/iconic logo' },
+      { property: 'og:image:alt', content: '@ngverse/icons logo' },
       { property: 'og:url', content: this.document.location.href },
       { property: 'og:type', content: 'website' },
     ]);

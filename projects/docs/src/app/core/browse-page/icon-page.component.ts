@@ -123,7 +123,7 @@ export class IconPageComponent {
   tree = input.required<IconModel[]>();
 
   installCode = computed(
-    () => `npm install @nginf/iconic-${this.registry().id}`
+    () => `npm install @ngverse/icons-${this.registry().id}`
   );
 
   fuse: Fuse<IconModel> | undefined;
@@ -160,7 +160,7 @@ export class IconPageComponent {
     effect(() => {
       const label = this.registry().name;
       const subTitle = `Angular icon library for ${label}`;
-      this.title.setTitle(`${label} | @nginf/iconic`);
+      this.title.setTitle(`${label} | @ngverse/icons`);
       if (subTitle) {
         this.meta.updateTag({ name: 'description', content: subTitle });
       }
@@ -174,7 +174,7 @@ export class IconPageComponent {
           property: 'og:image',
           content: 'https://nginf.github.io/iconic/logo.png',
         },
-        { property: 'og:image:alt', content: '@nginf/iconic logo' },
+        { property: 'og:image:alt', content: '@ngverse/icons logo' },
         { property: 'og:url', content: this.document.location.href },
         { property: 'og:type', content: 'website' },
       ]);

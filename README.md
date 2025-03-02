@@ -1,28 +1,28 @@
-# @nginf/iconic
+# @ngverse/icons
 
 <p align="center">
    <img src="./projects/docs/public/logo.png" alt="Logo" width="200px" />
 </p>
 
-`@nginf/iconic` is an Angular library that allows you to use popular open-source icons as regular components.
+`@ngverse/icons` is an Angular library that allows you to use popular open-source icons as regular components.
 
 see docs on [link](https://nginf.github.io/iconic/)
 
 ## NPM Packages
 
-[Ant Design](https://www.npmjs.com/package/@nginf/iconic-ad)
+[Ant Design](https://www.npmjs.com/package/@ngverse/icons-ad)
 
-[Font Awesome](https://www.npmjs.com/package/@nginf/iconic-fa)
+[Font Awesome](https://www.npmjs.com/package/@ngverse/icons-fa)
 
-[Hero Icons](https://www.npmjs.com/package/@nginf/iconic-hi)
+[Hero Icons](https://www.npmjs.com/package/@ngverse/icons-hi)
 
-[Lucide Icons](https://www.npmjs.com/package/@nginf/iconic-lu)
+[Lucide Icons](https://www.npmjs.com/package/@ngverse/icons-lu)
 
-[Material Icons](https://www.npmjs.com/package/@nginf/iconic-md)
+[Material Icons](https://www.npmjs.com/package/@ngverse/icons-md)
 
-[Bootstrap Icons](https://www.npmjs.com/package/@nginf/iconic-bs)
+[Bootstrap Icons](https://www.npmjs.com/package/@ngverse/icons-bs)
 
-[Remix Icons](https://www.npmjs.com/package/@nginf/iconic-ri)
+[Remix Icons](https://www.npmjs.com/package/@ngverse/icons-ri)
 
 ## Creators
 

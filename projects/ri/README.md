@@ -1,16 +1,16 @@
-# @nginf/iconic-ri
+# @ngverse/icons-ri
 
-this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Remix Icons
+this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Remix Icons
 
 ## install
 
-`npm install @nginf/iconic-ri`
+`npm install @ngverse/icons-ri`
 
 # use
 
 ```ts
    // ts
-import { WindyIcon } from '@nginf/iconic-ri';
+import { WindyIcon } from '@ngverse/icons-ri';
    ...
    // html
 <windy-icon></windy-icon>

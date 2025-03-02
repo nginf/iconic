@@ -1,16 +1,16 @@
-# @nginf/iconic-absd
+# @ngverse/icons-absd
 
-this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Bootstrap Icons
+this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Bootstrap Icons
 
 ## install
 
-`npm install @nginf/iconic-bs`
+`npm install @ngverse/icons-bs`
 
 # use
 
 ```ts
 // ts
-import { ZoomInIcon } from '@nginf/iconic-bs';
+import { ZoomInIcon } from '@ngverse/icons-bs';
 // html
 <zoom-in-icon></zoom-in-icon>
 ```

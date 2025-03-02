@@ -1,5 +1,5 @@
 {
-  "name": "@nginf/iconic-hi",
+  "name": "@ngverse/icons-hi",
   "private": false,
   "version": "0.0.6",
   "peerDependencies": {
@@ -15,7 +15,7 @@
     "generate": "vite-node ./src/generate.ts"
   },
   "repository": {
-    "url": "https://github.com/nginf/iconic"
+    "url": "https://github.com/ngverse/icons"
   },
   "keywords": [
     "angular",

@@ -1,16 +1,16 @@
-# @nginf/iconic-hi
+# @ngverse/icons-hi
 
-this package is part of [@nginf/iconic](https://nginf.github.io/iconic/) library. It provides Hero icons
+this package is part of [@ngverse/icons](https://nginf.github.io/iconic/) library. It provides Hero icons
 
 ## install
 
-`npm install @nginf/iconic-hi`
+`npm install @ngverse/icons-hi`
 
 # use
 
 ```ts
    // ts
-  import { ChevronDownOutlineIcon } from '@nginf/iconic-hi';
+  import { ChevronDownOutlineIcon } from '@ngverse/icons-hi';
    // html
   <chevron-down-outline-icon></chevron-down-outline-icon>
 ```
