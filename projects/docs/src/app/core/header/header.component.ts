@@ -4,13 +4,20 @@ import { Component, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter, take, takeUntil } from 'rxjs';
 import { IconButtonComponent } from '../icon-button/icon-button.component';
-import { GithubComponent } from "../icon/github.component";
+import { GithubComponent } from '../icon/github.component';
 import { MenuComponent } from '../icon/menu.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { ExternalLinkComponent } from '../icon/external-link.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, IconButtonComponent, MenuComponent, GithubComponent],
+  imports: [
+    RouterLink,
+    IconButtonComponent,
+    MenuComponent,
+    GithubComponent,
+    ExternalLinkComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ExternalLinkComponent } from '../icon/external-link.component';
 
 interface Group {
   name: string;
@@ -59,7 +60,7 @@ export const SIDEBAR_ROUTES = [
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, ExternalLinkComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
 })
